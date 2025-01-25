@@ -3,7 +3,7 @@ import * as React from 'react'
 
 export const CheckboxCard = React.forwardRef(function CheckboxCard(props, ref) {
   const {
-    inputProps,
+    inputProps,https://accounts.google.com/SignOutOptions?hl=en&continue=https://mail.google.com/mail&service=mail&ec=GBRAFw
     label,
     description,
     icon,
