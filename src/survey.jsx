@@ -4,6 +4,7 @@ import { Code, Slider, Stack, Text, Flex, CheckboxGroup, Box, Heading } from "@c
 import { useSlider } from "@chakra-ui/react";
 import { useState } from "react";
 import { CheckboxCard } from "./components/ui/checkbox-card";
+import { CUIAutoComplete } from 'chakra-ui-autocomplete'
 
 const Survey = () => {
   const [leftValue, setLeftValue] = useState(0);
@@ -32,6 +33,30 @@ const Survey = () => {
     min: 50000, // Set minimum value for price slider
     max: 10000000, // Set maximum value for price slider
   });
+
+  const countries = [
+    { value: "ghana", label: "Ghana" },
+    { value: "nigeria", label: "Nigeria" },
+    { value: "kenya", label: "Kenya" },
+    { value: "southAfrica", label: "South Africa" },
+    { value: "unitedStates", label: "United States" },
+    { value: "canada", label: "Canada" },
+    { value: "germany", label: "Germany" }
+  ];
+
+  const [pickerItems, setPickerItems] = useState(countries);
+  const [selectedItems, setSelectedItems] = useState([]);
+
+  const handleCreateItem = (item) => {
+    setPickerItems((curr) => [...curr, item]);
+    setSelectedItems((curr) => [...curr, item]);
+  };
+
+  const handleSelectedItemsChange = (selectedItems) => {
+    if (selectedItems) {
+      setSelectedItems(selectedItems);
+    }
+  };
 
   return (
     <Flex justifyContent="center">
@@ -147,6 +172,18 @@ const Survey = () => {
             </Slider.RootProvider>
           </Stack>
         </Flex>
+
+        {/* Country Picker (CUIAutoComplete) */}
+        <CUIAutoComplete
+          label="Choose preferred work locations"
+          placeholder="Type a Country"
+          onCreateItem={handleCreateItem}
+          items={pickerItems}
+          selectedItems={selectedItems}
+          onSelectedItemsChange={(changes) =>
+            handleSelectedItemsChange(changes.selectedItems)
+          }
+        />
       </Stack>
     </Flex>
   );
