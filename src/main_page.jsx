@@ -1,13 +1,16 @@
-import logo from './logo.svg';
-import { Flex, Input } from "@chakra-ui/react"
+import { Flex} from "@chakra-ui/react"
 import { Swipe } from './components/swipe';
-
+import { Header } from "./components/ui/header.jsx"
+;
 
 function MainPage() {
   return (
-    <Flex justifyContent='center' mt="24px">
-      <Swipe/>
-    </Flex>
+    <>
+      <Header></Header>
+      <Flex justifyContent='center' mt="24px">
+        <Swipe/>
+      </Flex>
+    </>
   );
 }
 
