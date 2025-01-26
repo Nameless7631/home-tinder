@@ -37,7 +37,7 @@ const Header = () => {
                             <DrawerTitle>History</DrawerTitle>
                         </DrawerHeader>
                         <DrawerBody>
-                        {history.map(h => <p>{h}</p>)}
+                        {history.map(h => <p>{h}</p>)} 
                         </DrawerBody>
                         <DrawerFooter>
                         <DrawerActionTrigger asChild>
