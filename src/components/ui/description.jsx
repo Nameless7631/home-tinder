@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Box } from "@chakra-ui/react";
 
 
-const Description = ({address, bed, bath, text}) => {
+const Description = ({address, bed, bath, sqft,text}) => {
     const [isOpen, setIsOpen] = useState(false);
     const handleToggle = () => {
         setIsOpen(prevState => !prevState);
@@ -27,6 +27,11 @@ const Description = ({address, bed, bath, text}) => {
              {(bath > 0) ? (
                 <>
                 Bath: {bath}<br/>
+                </>
+            ) : <></>}
+            {(sqft > 0) ? (
+                <>
+                Sqft: {sqft}<br/>
                 </>
             ) : <></>}
             <br/>
