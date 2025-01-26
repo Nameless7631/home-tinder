@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Text } from '@chakra-ui/react';
 import pixel from './pixelated.png';
+import './home.css';
 
 const Navbar = () => {
     return (
@@ -30,7 +31,7 @@ const Navbar = () => {
 
 const textStyle = {
     // fontFamily: "'Palatino Linotype', 'Book Antiqua', serif",
-    fontSize: '20px',
+    fontSize: '25px',
 };
 
 const navbarStyle = {
@@ -42,7 +43,7 @@ const navbarStyle = {
     backgroundPosition: 'center',
     position: 'relative',
     backgroundSize: 'cover',
-    borderBottom: '4px solid #000',
+    borderBottom: '4px solid #AFE1AF',
 };
 
 const navListStyle = {
@@ -67,16 +68,18 @@ const aboutStyle = {
     color: '#000',
     textDecoration: 'none',
     marginLeft: '20px',
+    fontSize: '18px',
 };
 
 const surveyStyle = {
     color: '#000',
     textDecoration: 'none',
     marginLeft: 'auto',
+    fontSize: '18px',
 };
 
 const titleStyle = {
-    fontSize: '20px',
+    fontSize: '25px',
     marginLeft: '10px',
 };
 
