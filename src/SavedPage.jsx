@@ -39,6 +39,7 @@ const SavedPage = () => {
       try {
         const response = await axios.get("http://127.0.0.1:8000/history");
         setData(response.data);
+        console.log("istory", response.data);
       } catch (err) {
         console.error("Error fetching data:", err.message);
       }
