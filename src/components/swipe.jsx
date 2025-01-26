@@ -4,7 +4,7 @@ import { IoMdPin } from "react-icons/io";
 import { motion, useAnimation } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { Description } from "./ui/description.jsx"
-// import axios from "axios";
+import axios from "axios";
 
 
 
@@ -82,10 +82,6 @@ const Swipe = () => {
     if (info.offset.x > 100) {
       setSwiped("right");
       console.log("Swiped Right");
-      // Get current house data before changing randomIdx
-      const currentHouse = houses[randomIdx];
-      const currentYear = mostRecentYear;
-      
       await controls.start({
         x: 300,
         opacity: 0,
@@ -93,7 +89,6 @@ const Swipe = () => {
       });
       setHistory((prevHistory) => [...prevHistory, randomIdx]);
 
-      // Now update for next house
       setRandomIdx(Math.floor(Math.random() * houses.length));
       if (houses[randomIdx].taxAssessments) {
         setMostRecentYear(Math.max(...Object.keys(houses[randomIdx].taxAssessments).map(Number)));
@@ -128,10 +123,6 @@ const Swipe = () => {
     } else if (info.offset.x < -100) {
       setSwiped("left");
       console.log("Swiped Left");
-      // Get current house data before changing randomIdx
-      const currentHouse = houses[randomIdx];
-      const currentYear = mostRecentYear;
-      
       await controls.start({
         x: -300,
         opacity: 0,
@@ -172,10 +163,8 @@ const Swipe = () => {
       };
       await axios.post('http://localhost:8000/history/', historyData);
     } else {
-      // Reset the card to its original position if no swipe
       controls.start({ x: 0 });
     }
-    // Reset swiped state and animation after swipe
     setSwiped(null);
     controls.start({ x: 0, opacity: 1 });
   };
@@ -192,11 +181,11 @@ const Swipe = () => {
     >
       <motion.div
         drag="x"
-        dragConstraints={{ left: 0, right: 0 }} // Only allow horizontal dragging
-        onDragEnd={handleDragEnd} // Trigger action after dragging
+        dragConstraints={{ left: 0, right: 0 }}
+        onDragEnd={handleDragEnd}
         initial={{ scale: 1 }}
         
-        animate={controls} // Use controls for exit animation
+        animate={controls}
         style={{ width: "400px" }}
       > 
     <Card.Root 
@@ -204,6 +193,8 @@ const Swipe = () => {
       ref={cardRef}
       maxW="xl" 
       overflow="hidden" 
+      h="900px"
+      tabIndex={0}
       h="800px"
       tabIndex={0} // Makes the card focusable to capture key events
       onKeyDown={async (event) => {
