@@ -1,7 +1,8 @@
 import { Box, IconButton, Text, Stack, Heading } from "@chakra-ui/react";
 import { IoPersonSharp } from "react-icons/io5";
 import { FaHistory } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom"
 import { FaHeart, FaHeartBroken } from "react-icons/fa";
 import {
   DrawerBackdrop,
@@ -56,6 +57,7 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   // const [history, setHistory] = useState(["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]);
   const [history, setHistory] = useState([]);
+  const navigate = useNavigate();
 
   const fetchHistory = async () => {
     try {
@@ -91,9 +93,12 @@ const Header = () => {
       </Link>
 
       <Box>
-        {/* <IconButton backgroundColor="white">
-          <IoPersonSharp color="black" />
-        </IconButton> */}
+        <IconButton backgroundColor="white" onClick={() => navigate("/saved")}>
+        <IoPersonSharp
+            color="black"
+            style={{ cursor: "pointer" }} // Make the icon clickable
+          />
+        </IconButton>
 
         <DrawerRoot open={open} onOpenChange={
           (e) => {setOpen(e.open);

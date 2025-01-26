@@ -15,7 +15,7 @@ function App() {
           <Route path="/darkModeSwitch" element={<DarkModeButton />} />
           {/* <Route path="/saved" element={<SavedPage />} /> */}
           {/* <Route path="/login" element={<LoginPage />} /> */}
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/saved" element={<SavedPage />} />
           {/* <Route path="/login" element={<LoginPage />} /> */}
         </Routes>

@@ -108,6 +108,7 @@ class HouseHistory(BaseModel):
     price: Union[float, str]
     property_type: str
     like: bool
+    image: str
       
 app = FastAPI()
 

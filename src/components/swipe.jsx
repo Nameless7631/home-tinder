@@ -23,6 +23,7 @@ const Swipe = () => {
   const [mostRecentYear, setMostRecentYear] = useState(null);
   const [algo, setAlgo] = useState({});
   const cardRef = useRef(null);
+  const [imageSrc, setImageSrc] = useState(" ");
 
   const [formData, setFormData] = useState({
     address: "",
@@ -123,7 +124,6 @@ const Swipe = () => {
   }
 
   const MyComponent = ({ address }) => {
-    const [imageSrc, setImageSrc] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
@@ -181,12 +181,13 @@ const Swipe = () => {
         property_type: currentHouse.propertyType,
         bedrooms: Number(currentHouse.bedrooms || 0),
         bathrooms: Number(currentHouse.bathrooms || 0),
+        image: imageSrc,
         price: currentHouse.taxAssessments?.[mostRecentYear]?.value 
           ? Number(currentHouse.taxAssessments[mostRecentYear].value) 
           : "",
           like: true
       };
-      console.log(currentHouse.propertyType);
+      
       setAlgo(prevAlgo => ({
         ...prevAlgo,
         "Apartment": currentHouse?.propertyType === "Apartment" ? prevAlgo["Apartment"] + 1 : prevAlgo["Apartment"],
@@ -231,6 +232,7 @@ const Swipe = () => {
         property_type: house.propertyType,
         bedrooms: Number(currentHouse.bedrooms || 0),
         bathrooms: Number(currentHouse.bathrooms || 0),
+        image: imageSrc,
         price: currentHouse.taxAssessments?.[mostRecentYear]?.value 
           ? Number(currentHouse.taxAssessments[mostRecentYear].value) 
           : "",
@@ -303,6 +305,7 @@ const Swipe = () => {
             property_type: house.propertyType,
             bedrooms: Number(currentHouse.bedrooms || 0),
             bathrooms: Number(currentHouse.bathrooms || 0),
+            image: imageSrc,
             price: currentHouse.taxAssessments?.[currentYear]?.value 
               ? Number(currentHouse.taxAssessments[currentYear].value) 
               : "",
@@ -383,6 +386,7 @@ const Swipe = () => {
             property_type: house.propertyType,
             bedrooms: Number(currentHouse.bedrooms || 0),
             bathrooms: Number(currentHouse.bathrooms || 0),
+            image: imageSrc,
             price: currentHouse.taxAssessments?.[currentYear]?.value 
               ? Number(currentHouse.taxAssessments[currentYear].value) 
               : "",
@@ -445,7 +449,7 @@ const Swipe = () => {
       <Card.Footer
         display="flex"
         justifyContent="center"
-        gap="4" // Adjust spacing between buttons
+        gap="24" // Adjust spacing between buttons
       >
         <IconButton rounded="full" backgroundColor="red" width="72px" height="72px"
           onClick={async () => {
