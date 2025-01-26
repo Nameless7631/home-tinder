@@ -4,7 +4,7 @@ import { IoMdPin } from "react-icons/io";
 import { motion, useAnimation } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { Description } from "./ui/description.jsx"
-import axios from "axios";
+// import axios from "axios";
 
 
 
@@ -124,7 +124,7 @@ const Swipe = () => {
         
         animate={controls} // Use controls for exit animation
         style={{ width: "400px" }}
-      >
+      > 
     <Card.Root 
       outline='none'
       ref={cardRef}
