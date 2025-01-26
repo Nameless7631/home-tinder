@@ -1,26 +1,42 @@
 import { useState } from "react";
-import { Box, IconButton, Collapsible, Icon } from "@chakra-ui/react";
-import { FaChevronUp, FaChevronDown } from "react-icons/fa";
+import { Box } from "@chakra-ui/react";
 
 
-const Description = () => {
-  return (
+const Description = ({address, bed, bath, text}) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const handleToggle = () => {
+        setIsOpen(prevState => !prevState);
+    };
+    const halfwayIdx = (text.length > 120) ? Math.floor(text.length/2) : text.length;
+    const firstHalf = text.slice(0, halfwayIdx);
+    const secondHalf = text.slice(halfwayIdx);
+
+    return (
     <Box>
-        <Collapsible.Root>
-        <Collapsible.Trigger>
-            <IconButton backgroundColor="red">
-                <FaChevronDown/>
-            </IconButton>
-        </Collapsible.Trigger>
-        <Collapsible.Content>
-            <Box padding="4" borderWidth="1px" color = "gray">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s, when an unknown printer took a galley of type and
-                scrambled it to make a type specimen book.
+        <Box onClick={handleToggle} style={{ cursor: "pointer", display: "inline"}}>
+            {(address) ? (
+                <>
+                Address: {address}<br/>
+                </>
+            ) : <></>}
+             {(bed > 0) ? (
+                <>
+                Bed: {bed}<br/>
+                </>
+            ) : <></>}
+             {(bath > 0) ? (
+                <>
+                Bath: {bath}<br/>
+                </>
+            ) : <></>}
+            <br/>
+            {firstHalf}
+        </Box>
+        {isOpen && (
+            <Box style={{ display: "inline"}}>
+                {secondHalf}
             </Box>
-        </Collapsible.Content>
-        </Collapsible.Root>
+        )}
     </Box>
   );
 };
