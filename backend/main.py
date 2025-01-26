@@ -1,30 +1,23 @@
 from typing import Union, List, Dict, Any
 from fastapi import FastAPI, Query, Body # type: ignore
 from fastapi.middleware.cors import CORSMiddleware # type: ignore
+import os
+from openai import OpenAI
+from dotenv import load_dotenv, find_dotenv
 import json
 from pydantic import BaseModel
 import random
 
 
 
-class Preferences(BaseModel):
-    houseType: List[str]
-    numberOfBeds: List[float]  # Changed to float since slider values might be decimals
-    numberOfBathrooms: List[float]
-    priceRange: List[float]
-    city: List[str]
+_ = load_dotenv(find_dotenv())
+client = OpenAI(
+    api_key=os.environ.get('OPENAI_API_KEY')
 
-class HouseHistory(BaseModel):
-    address: str
-    bedrooms: float
-    bathrooms: float
-    price: Union[float, str]
-    property_type: str
-    like: bool
+)
 
-app = FastAPI()
-history = []
 houses = []
+
 preferences = []
 algo = {
     "Apartment": 0,
@@ -37,6 +30,39 @@ algo = {
     "lessThan2Baths": 0
 }
 
+def generate_desc(house: dict):
+    features = house.get('features', {})
+    if features is None or not isinstance(features, dict):
+        feature_list = []
+    else:
+        feature_list = [f"{key}: {value}" for key, value in features.items()]
+    prompt = f"""
+    Generate a short professional description to sell a house with the following information:
+    Price: ${house['price']} (if available)
+    Bedrooms: {house['bedrooms']}
+    Bathrooms: {house['bathrooms']}
+    Property Type: {house['propertyType']}
+    Square Footage: {house['squareFootage']} sq ft
+    City: {house['city']}
+    State: {house['state']}
+    Features: {', '.join(feature_list) if feature_list else 'No specific features listed'}
+    Year Built: {house['yearBuilt'] if house.get('yearBuilt') else 'No specific year built listed'}
+    Make it lighthearted and grasp all the positive parts about the house. If there are information not listed, do not say that they are not listed in your description.
+    Just omit the mention of it all totally.
+    """
+
+    
+    completion = client.chat.completions.create(
+        model = "gpt-4o-mini",
+        messages = [{"role": "system", "content": "You are a realtor providing housing descriptions based on the houses details"},
+                    {"role": "user","content": prompt}],
+        max_tokens=100,
+        temperature=0.7
+    )
+
+    return completion.choices[0].message.content
+  
+count = 0
 with open('../dataset/irvineHomes.json', 'r') as file:
     data = json.load(file)
     for house in data:
@@ -54,7 +80,36 @@ with open('../dataset/irvineHomes.json', 'r') as file:
             newHouse["price"] = house["taxAssessments"][str(max)]["value"]
         else:
             newHouse["price"] = None
+        newHouse["features"] = house["features"] if "features" in house else None
+        if count < 2: #remove once done
+            text = generate_desc(newHouse)
+            newHouse["text"] = text
+            count+= 1 #remove once done
+        else: #remove once done
+            newHouse["text"] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         houses.append(newHouse)
+
+
+
+history = []
+preferences = []
+
+class Preferences(BaseModel):
+    houseType: List[str]
+    numberOfBeds: List[float]  # Changed to float since slider values might be decimals
+    numberOfBathrooms: List[float]
+    priceRange: List[float]
+    city: List[str]
+
+class HouseHistory(BaseModel):
+    address: str
+    bedrooms: float
+    bathrooms: float
+    price: Union[float, str]
+    property_type: str
+    like: bool
+      
+app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
@@ -109,6 +164,7 @@ def read_root():
         break
     
     return houses[num]
+
 
 @app.post("/saved/{house_id}")
 def save_post(house_id : int):
