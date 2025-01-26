@@ -57,18 +57,18 @@ const Header = () => {
   // const [history, setHistory] = useState(["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]);
   const [history, setHistory] = useState([]);
 
+  const fetchHistory = async () => {
+    try {
+      const response = await axios.get('http://localhost:8000/history/');
+      // Access the history array from the response data
+      setHistory(response.data.history || []);
+      // console.log('History data:', response.data.history);
+    } catch (error) {
+      console.error('Error fetching history:', error);
+      setHistory([]); // Set empty array on error
+    }
+  };
   useEffect(() => {
-    const fetchHistory = async () => {
-      try {
-        const response = await axios.get('http://localhost:8000/history/');
-        // Access the history array from the response data
-        setHistory(response.data.history || []);
-        // console.log('History data:', response.data.history);
-      } catch (error) {
-        console.error('Error fetching history:', error);
-        setHistory([]); // Set empty array on error
-      }
-    };
     
     fetchHistory();
   }, []);
@@ -95,7 +95,14 @@ const Header = () => {
           <IoPersonSharp color="black" />
         </IconButton> */}
 
-        <DrawerRoot open={open} onOpenChange={(e) => setOpen(e.open)}>
+        <DrawerRoot open={open} onOpenChange={
+          (e) => {setOpen(e.open);
+            fetchHistory();
+          }
+
+        }
+
+          >
           <DrawerBackdrop />
           <DrawerTrigger asChild>
             <IconButton backgroundColor="white">
