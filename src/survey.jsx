@@ -63,9 +63,26 @@ const Survey = () => {
         numberOfBathrooms: formData.numberOfBathrooms.map(Number),
         priceRange: formData.priceRange.map(Number)
       };
+
+      const algo = {
+        "Apartment": formattedData.houseType.includes("Apartment") ? 1 : -1,
+        "Condo": formattedData.houseType.includes("Condo") ? 1 : -1,
+        "Single Family": formattedData.houseType.includes("Single Family") ? 1 : -1,
+        "Multi-Family": formattedData.houseType.includes("Multi-Family") ? 1 : -1,
+        "moreThan3Beds": 0,
+        "threeOrLessBeds": 0,
+        "moreThan2Baths": 0,
+        "lessThan2Baths": 0,
+      }
+
+      // console.log(algo);
+      const response = await axios.post('http://localhost:8000/algo', algo);
+      // console.log(response);
+
       
-      const response = await axios.post('http://localhost:8000/preferences', formattedData);
-      console.log('Success:', response.data);
+      
+      // const response = await axios.post('http://localhost:8000/preferences', formattedData);
+      // console.log('Success:', response.data);
     } catch (error) {
       console.error('Error submitting preferences:', error);
       if (error.response) {
@@ -154,7 +171,7 @@ const Survey = () => {
                   >
                     <Image
                       src={item.value === "Apartment" ? apartment : 
-                           item.value === "House" ? singleFamily :
+                           item.value === "Single Family" ? singleFamily :
                            item.value === "Condo" ? condo : 
                            multiFamily} // fallback to apartment for other types
                       boxSize="100%"
@@ -275,7 +292,7 @@ const Survey = () => {
           _hover={{ bg: "#74995d" }}
           onClick={() => {
             handleSubmit();
-            navigate("/main");
+            // navigate("/main");
           }}
           >Submit</Button>
       </Stack>
@@ -286,8 +303,8 @@ const Survey = () => {
 const items = [
   { value: "Apartment", title: "Apartment", description: "" },
   { value: "Condo", title: "Condo", description: "" },
-  { value: "House", title: "Single Family", description: "" },
-  { value: "Town House", title: "Multi Family", description: "" },
+  { value: "Single Family", title: "Single Family", description: "" },
+  { value: "Multi-Family", title: "Multi-Family", description: "" },
 ];
 
 export { Survey };
