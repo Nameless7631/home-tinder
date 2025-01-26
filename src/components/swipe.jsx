@@ -7,7 +7,6 @@ import { Description } from "./ui/description.jsx"
 import axios from "axios";
 
 
-
 const Swipe = () => {
   const controls = useAnimation(); // Controls for the animation
   const [swiped, setSwiped] = useState(null); // Track swipe direction (optional)
@@ -102,40 +101,56 @@ const Swipe = () => {
 
   const getImage = async (address) => {
     const imageType = ["jpg", "webp"];
-    for (let type of imageType){
-      const imagePath = `houses/${address}.${type}`;
-      const exists = await checkImageExists(imagePath);
-      if(exists){
-        return imagePath;
+    const defaultImage = "houses/matcha.jpg";
+    
+    // First check if we need the default image
+    const imagePath = `houses/${address}.${imageType[0]}`; // Check first format
+    const exists = await checkImageExists(imagePath);
+    if (!exists) {
+      return defaultImage;
+    }
+    
+    // If we get here, we know we have a valid image
+    for (let type of imageType) {
+      const path = `houses/${address}.${type}`;
+      const typeExists = await checkImageExists(path);
+      if (typeExists) {
+        return path;
       }
     }
-    return "houses/matcha.jpg"
+    
+    return defaultImage; // Fallback just in case
   }
 
   const MyComponent = ({ address }) => {
-    const [imageSrc, setImageSrc] = useState(
-      "houses/matcha.jpg"
-    );
-  
+    const [imageSrc, setImageSrc] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+
     useEffect(() => {
       const fetchImage = async () => {
+        setIsLoading(true);
         const img = await getImage(address);
         setImageSrc(img);
+        setIsLoading(false);
       };
-  
+
       fetchImage();
-    }, [address]); // Runs every time the address prop changes
-    console.log("Checking path:", imageSrc);
+    }, [address]);
+
+    if (isLoading) {
+      return <div style={{ height: "300px", backgroundColor: "#f0f0f0" }}></div>; // Loading placeholder
+    }
+
     return (
       <Image
-        src={imageSrc}
-        alt="Dynamic image loaded based on existence"
+        src={imageSrc || "houses/matcha.jpg"}
+        alt="Property image"
       />
     );
   };
 
   const handleDragEnd = async (_, info) => {
-    const currentHouse = houses[randomIdx];
+    const currentHouse = house;
     if (info.offset.x > 100) {
       setSwiped("right");
       // console.log("Swiped Right");
@@ -162,7 +177,7 @@ const Swipe = () => {
         
       // Prepare history data from current house
       const historyData = {
-        address: houses[randomIdx].formattedAddress,
+        address: house.formattedAddress,
         property_type: currentHouse.propertyType,
         bedrooms: Number(currentHouse.bedrooms || 0),
         bathrooms: Number(currentHouse.bathrooms || 0),
@@ -183,7 +198,7 @@ const Swipe = () => {
         "moreThan2Baths": currentHouse?.bathrooms > 2 ? prevAlgo["moreThan2Baths"] + 1 : prevAlgo["moreThan2Baths"],
         "lessThan2Baths": currentHouse?.bathrooms <= 2 ? prevAlgo["lessThan2Baths"] + 1 : prevAlgo["lessThan2Baths"]
       }));
-      console.log("Multi-Family", algo["Multi-Family"])
+      // console.log("Multi-Family", algo["Multi-Family"])
       handleAlgoSubmit();
       // const response = await axios.post('http://localhost:8000/algo', algo);
       // console.log("Algo response:", response);
@@ -398,7 +413,7 @@ const Swipe = () => {
         src={getImage(houses[randomIdx]?.formattedAddress)}
         alt="Green double couch with wooden legs"
       />       */}
-        <MyComponent address={houses[randomIdx]?.formattedAddress || ""} />
+        <MyComponent address={house?.formattedAddress || ""} />
       <Card.Body gap="2">
         {/* <Card.Title>Location- City/State and Price</Card.Title> */}
         <HStack>
