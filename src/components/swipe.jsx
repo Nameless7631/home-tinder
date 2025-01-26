@@ -143,7 +143,7 @@ const Swipe = () => {
 
     return (
       <Image
-        src={imageSrc || "houses/matcha.jpg"}
+        src={imageSrc}
         alt="Property image"
       />
     );
