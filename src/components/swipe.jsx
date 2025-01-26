@@ -223,8 +223,6 @@ const Swipe = () => {
       ref={cardRef}
       maxW="xl" 
       overflow="hidden" 
-      h="900px"
-      tabIndex={0}
       h="800px"
       tabIndex={0} // Makes the card focusable to capture key events
       onKeyDown={async (event) => {
