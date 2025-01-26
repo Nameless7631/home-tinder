@@ -121,7 +121,7 @@ const Survey = () => {
     <Flex justifyContent="center">
       <Stack align="flex-start" spacing={4} mt="24px">
         {/* Wrap Heading in Link to navigate */}
-        <Link to="/home">
+        <Link to="/">
           <Heading
             position="absolute"
             top="0"
