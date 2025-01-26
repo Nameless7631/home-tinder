@@ -1,0 +1,2009 @@
+[
+    {
+      "id": "157-Damsel,-Irvine,-CA-92620",
+      "formattedAddress": "157 Damsel, Irvine, CA 92620",
+      "addressLine1": "157 Damsel",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92620",
+      "county": "Orange",
+      "latitude": 33.710595,
+      "longitude": -117.75201,
+      "propertyType": "Condo",
+      "bedrooms": 3,
+      "bathrooms": 2.5,
+      "squareFootage": 1632,
+      "yearBuilt": 2017,
+      "assessorID": "931-332-37",
+      "legalDescription": "N TR 17861 BLK LOT 1 UN 4 LOT 1 OF TRACT 17861 OF CONDO PROJECT 931-33",
+      "features": {
+        "architectureType": "Condo / Apartment",
+        "garage": true,
+        "garageType": "Garage"
+      },
+      "taxAssessments": {
+        "2023": {
+          "year": 2023,
+          "value": 868369,
+          "land": 578910,
+          "improvements": 289459
+        }
+      },
+      "propertyTaxes": {
+        "2023": {
+          "year": 2023,
+          "total": 11845
+        }
+      },
+      "owner": {
+        "names": [
+          "Sunji Kim",
+          "Hahn Koo"
+        ],
+        "mailingAddress": {
+          "id": "881-Water-Walk,-Milpitas,-CA-95035",
+          "formattedAddress": "881 Water Walk, Milpitas, CA 95035",
+          "addressLine1": "881 Water Walk",
+          "addressLine2": null,
+          "city": "Milpitas",
+          "state": "CA",
+          "zipCode": "95035"
+        }
+      },
+      "ownerOccupied": false
+    },
+    {
+      "id": "100-Cantor,-Irvine,-CA-92620",
+      "formattedAddress": "100 Cantor, Irvine, CA 92620",
+      "addressLine1": "100 Cantor",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92620",
+      "county": "Orange",
+      "latitude": 33.694604,
+      "longitude": -117.743404,
+      "propertyType": "Apartment",
+      "bathrooms": 2,
+      "yearBuilt": 2006
+    },
+    {
+      "id": "344-Knollglen,-Irvine,-CA-92614",
+      "formattedAddress": "344 Knollglen, Irvine, CA 92614",
+      "addressLine1": "344 Knollglen",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92614",
+      "county": "Orange",
+      "latitude": 33.66922,
+      "longitude": -117.79123,
+      "propertyType": "Apartment",
+      "yearBuilt": 1984
+    },
+    {
+      "id": "25-Pacifica,-Irvine,-CA-92618",
+      "formattedAddress": "25 Pacifica, Irvine, CA 92618",
+      "addressLine1": "25 Pacifica",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92618",
+      "county": "Orange County",
+      "latitude": 33.651677,
+      "longitude": -117.750094,
+      "propertyType": "Apartment",
+      "yearBuilt": 2009
+    },
+    {
+      "id": "1300-Hayes,-Irvine,-CA-92620",
+      "formattedAddress": "1300 Hayes, Irvine, CA 92620",
+      "addressLine1": "1300 Hayes",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92620",
+      "county": "Orange",
+      "latitude": 33.69357,
+      "longitude": -117.76978,
+      "propertyType": "Apartment",
+      "yearBuilt": 1981
+    },
+    {
+      "id": "100-Virtuoso,-Irvine,-CA-92620",
+      "formattedAddress": "100 Virtuoso, Irvine, CA 92620",
+      "addressLine1": "100 Virtuoso",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92620",
+      "county": "Orange",
+      "latitude": 33.700929,
+      "longitude": -117.737842,
+      "propertyType": "Apartment",
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "squareFootage": 858,
+      "lotSize": 946696,
+      "yearBuilt": 2008,
+      "assessorID": "580-154-03",
+      "legalDescription": "N TR 17086 BLK LOT 17",
+      "features": {
+        "architectureType": "Multi-Unit Building",
+        "unitCount": 1
+      },
+      "taxAssessments": {
+        "2023": {
+          "year": 2023,
+          "value": 85574465,
+          "land": 249518,
+          "improvements": 85324947
+        }
+      },
+      "propertyTaxes": {
+        "2023": {
+          "year": 2023,
+          "total": 1533569
+        }
+      },
+      "owner": {
+        "names": [
+          "IRVINE CO LLC"
+        ],
+        "type": "Organization",
+        "mailingAddress": {
+          "id": "PO-BOX-2450,-Newport-Beach,-CA-92658",
+          "formattedAddress": "PO BOX 2450, Newport Beach, CA 92658",
+          "addressLine1": "PO BOX 2450",
+          "addressLine2": null,
+          "city": "Newport Beach",
+          "state": "CA",
+          "zipCode": "92658"
+        }
+      },
+      "ownerOccupied": false
+    },
+    {
+      "id": "115-Pinestone,-Irvine,-CA-92604",
+      "formattedAddress": "115 Pinestone, Irvine, CA 92604",
+      "addressLine1": "115 Pinestone",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92604",
+      "county": "Orange",
+      "latitude": 33.68345,
+      "longitude": -117.80497,
+      "propertyType": "Apartment"
+    },
+    {
+      "id": "100-Las-Palmas-Dr,-Irvine,-CA-92602",
+      "formattedAddress": "100 Las Palmas Dr, Irvine, CA 92602",
+      "addressLine1": "100 Las Palmas Dr",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92602",
+      "county": "Orange",
+      "latitude": 33.72511,
+      "longitude": -117.78629,
+      "propertyType": "Apartment",
+      "yearBuilt": 2003
+    },
+    {
+      "id": "101-Veneto,-Irvine,-CA-92614",
+      "formattedAddress": "101 Veneto, Irvine, CA 92614",
+      "addressLine1": "101 Veneto",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92614",
+      "county": "Orange",
+      "latitude": 33.67952,
+      "longitude": -117.83367,
+      "propertyType": "Apartment",
+      "yearBuilt": 1987
+    },
+    {
+      "id": "6500-Roosevelt,-Irvine,-CA-92618",
+      "formattedAddress": "6500 Roosevelt, Irvine, CA 92618",
+      "addressLine1": "6500 Roosevelt",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92618",
+      "county": "Orange",
+      "latitude": 33.68355,
+      "longitude": -117.7513,
+      "propertyType": "Apartment",
+      "yearBuilt": 2015,
+      "features": {
+        "unitCount": 485
+      }
+    },
+    {
+      "id": "29131-Spectrum,-Irvine,-CA-92618",
+      "formattedAddress": "29131 Spectrum, Irvine, CA 92618",
+      "addressLine1": "29131 Spectrum",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92618",
+      "county": "Orange County",
+      "latitude": 33.65543,
+      "longitude": -117.75707,
+      "propertyType": "Apartment",
+      "yearBuilt": 2017
+    },
+    {
+      "id": "18880-Douglas,-Irvine,-CA-92612",
+      "formattedAddress": "18880 Douglas, Irvine, CA 92612",
+      "addressLine1": "18880 Douglas",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92612",
+      "county": "Orange",
+      "latitude": 33.67337,
+      "longitude": -117.86032,
+      "propertyType": "Apartment",
+      "bathrooms": 2,
+      "yearBuilt": 2013
+    },
+    {
+      "id": "100-Piedmont,-Irvine,-CA-92620",
+      "formattedAddress": "100 Piedmont, Irvine, CA 92620",
+      "addressLine1": "100 Piedmont",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92620",
+      "county": "Orange",
+      "latitude": 33.69988,
+      "longitude": -117.74452,
+      "propertyType": "Apartment",
+      "yearBuilt": 2005,
+      "features": {
+        "unitCount": 420
+      }
+    },
+    {
+      "id": "100-Anacapa,-Irvine,-CA-92602",
+      "formattedAddress": "100 Anacapa, Irvine, CA 92602",
+      "addressLine1": "100 Anacapa",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92602",
+      "county": "Orange",
+      "latitude": 33.72648,
+      "longitude": -117.78421,
+      "propertyType": "Apartment",
+      "yearBuilt": 2006
+    },
+    {
+      "id": "3395-Michelson-Dr,-Irvine,-CA-92612",
+      "formattedAddress": "3395 Michelson Dr, Irvine, CA 92612",
+      "addressLine1": "3395 Michelson Dr",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92612",
+      "county": "Orange",
+      "latitude": 33.671902,
+      "longitude": -117.837322,
+      "propertyType": "Apartment",
+      "yearBuilt": 2014
+    },
+    {
+      "id": "25-Palatine-Rd,-Irvine,-CA-92612",
+      "formattedAddress": "25 Palatine Rd, Irvine, CA 92612",
+      "addressLine1": "25 Palatine Rd",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92612",
+      "county": "Orange County",
+      "latitude": 33.669274,
+      "longitude": -117.848431,
+      "propertyType": "Apartment",
+      "yearBuilt": 1995
+    },
+    {
+      "id": "100-Shadow-Oaks,-Irvine,-CA-92618",
+      "formattedAddress": "100 Shadow Oaks, Irvine, CA 92618",
+      "addressLine1": "100 Shadow Oaks",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92618",
+      "county": "Orange",
+      "latitude": 33.672237,
+      "longitude": -117.782972,
+      "propertyType": "Apartment",
+      "bathrooms": 2,
+      "yearBuilt": 2001
+    },
+    {
+      "id": "100-Duranzo-Aisle,-Irvine,-CA-92606",
+      "formattedAddress": "100 Duranzo Aisle, Irvine, CA 92606",
+      "addressLine1": "100 Duranzo Aisle",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92606",
+      "county": "Orange",
+      "latitude": 33.68469,
+      "longitude": -117.82271,
+      "propertyType": "Apartment",
+      "yearBuilt": 1993,
+      "features": {
+        "unitCount": 382
+      }
+    },
+    {
+      "id": "105-Quail-Rdg,-Irvine,-CA-92603",
+      "formattedAddress": "105 Quail Rdg, Irvine, CA 92603",
+      "addressLine1": "105 Quail Rdg",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92603",
+      "county": "Orange",
+      "latitude": 33.65314,
+      "longitude": -117.77375,
+      "propertyType": "Apartment",
+      "yearBuilt": 2004
+    },
+    {
+      "id": "3333-Michelson-Dr,-Irvine,-CA-92612",
+      "formattedAddress": "3333 Michelson Dr, Irvine, CA 92612",
+      "addressLine1": "3333 Michelson Dr",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92612",
+      "county": "Orange",
+      "latitude": 33.6714,
+      "longitude": -117.84367,
+      "propertyType": "Apartment"
+    },
+    {
+      "id": "700-Sonoma-Aisle,-Irvine,-CA-92618",
+      "formattedAddress": "700 Sonoma Aisle, Irvine, CA 92618",
+      "addressLine1": "700 Sonoma Aisle",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92618",
+      "county": "Orange",
+      "latitude": 33.66683,
+      "longitude": -117.78874,
+      "propertyType": "Apartment",
+      "bathrooms": 2,
+      "yearBuilt": 1998
+    },
+    {
+      "id": "100-Whispering-Trl,-Irvine,-CA-92602",
+      "formattedAddress": "100 Whispering Trl, Irvine, CA 92602",
+      "addressLine1": "100 Whispering Trl",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92602",
+      "county": "Orange",
+      "latitude": 33.73805,
+      "longitude": -117.7641,
+      "propertyType": "Apartment",
+      "yearBuilt": 2007,
+      "features": {
+        "unitCount": 500
+      }
+    },
+    {
+      "id": "2100-Sullivan,-Irvine,-CA-92614",
+      "formattedAddress": "2100 Sullivan, Irvine, CA 92614",
+      "addressLine1": "2100 Sullivan",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92614",
+      "county": "Orange",
+      "latitude": 33.68139,
+      "longitude": -117.8451,
+      "propertyType": "Apartment",
+      "yearBuilt": 2016,
+      "features": {
+        "unitCount": 457
+      }
+    },
+    {
+      "id": "100-Turtle-Crest-Dr,-Irvine,-CA-92603",
+      "formattedAddress": "100 Turtle Crest Dr, Irvine, CA 92603",
+      "addressLine1": "100 Turtle Crest Dr",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92603",
+      "county": "Orange",
+      "latitude": 33.63127,
+      "longitude": -117.83632,
+      "propertyType": "Apartment",
+      "yearBuilt": 2003
+    },
+    {
+      "id": "50-Eastshore,-Irvine,-CA-92604",
+      "formattedAddress": "50 Eastshore, Irvine, CA 92604",
+      "addressLine1": "50 Eastshore",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92604",
+      "county": "Orange",
+      "latitude": 33.67622,
+      "longitude": -117.78583,
+      "propertyType": "Apartment",
+      "yearBuilt": 1979
+    },
+    {
+      "id": "2700-Main-St,-Irvine,-CA-92614",
+      "formattedAddress": "2700 Main St, Irvine, CA 92614",
+      "addressLine1": "2700 Main St",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92614",
+      "county": "Orange",
+      "latitude": 33.68023,
+      "longitude": -117.84108,
+      "propertyType": "Apartment",
+      "yearBuilt": 2019
+    },
+    {
+      "id": "100-Cantata,-Irvine,-CA-92606",
+      "formattedAddress": "100 Cantata, Irvine, CA 92606",
+      "addressLine1": "100 Cantata",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92606",
+      "county": "Orange",
+      "latitude": 33.68508,
+      "longitude": -117.81736,
+      "propertyType": "Apartment",
+      "yearBuilt": 1991
+    },
+    {
+      "id": "2750-Kelvin-Ave,-Irvine,-CA-92614",
+      "formattedAddress": "2750 Kelvin Ave, Irvine, CA 92614",
+      "addressLine1": "2750 Kelvin Ave",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92614",
+      "county": "Orange",
+      "latitude": 33.6842,
+      "longitude": -117.83873,
+      "propertyType": "Apartment",
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "squareFootage": 750,
+      "yearBuilt": 1989
+    },
+    {
+      "id": "401-Rockefeller,-Irvine,-CA-92612",
+      "formattedAddress": "401 Rockefeller, Irvine, CA 92612",
+      "addressLine1": "401 Rockefeller",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92612",
+      "county": "Orange",
+      "latitude": 33.67748,
+      "longitude": -117.84798,
+      "propertyType": "Apartment",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "squareFootage": 1589,
+      "lotSize": 1700,
+      "yearBuilt": 2007
+    },
+    {
+      "id": "35-Via,-Lucca,-Irvine,-CA-92612",
+      "formattedAddress": "35 Via, Lucca, Irvine, CA 92612",
+      "addressLine1": "35 Via",
+      "addressLine2": "Lucca",
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92612",
+      "county": "Orange",
+      "latitude": 33.666731,
+      "longitude": -117.849374,
+      "propertyType": "Apartment",
+      "lotSize": 63666,
+      "yearBuilt": 1990,
+      "assessorID": "445-191-07",
+      "legalDescription": "N TR 13197 BLK LOT 5 TRACT 13197 LOT 5 & POR OF LOTS D & 6",
+      "features": {
+        "architectureType": "Multi-Unit Building"
+      },
+      "taxAssessments": {
+        "2019": {
+          "year": 2019,
+          "value": 3890896,
+          "land": 2360972,
+          "improvements": 1529924
+        },
+        "2023": {
+          "year": 2023,
+          "value": 4171824,
+          "land": 2531438,
+          "improvements": 1640386
+        }
+      },
+      "propertyTaxes": {
+        "2019": {
+          "year": 2019,
+          "total": 44001
+        },
+        "2023": {
+          "year": 2023,
+          "total": 46333
+        }
+      },
+      "owner": {
+        "names": [
+          "EQR-TOSCANA APARTMENTS"
+        ],
+        "type": "Organization",
+        "mailingAddress": {
+          "id": "PO-BOX-87407,-Chicago,-IL-60680",
+          "formattedAddress": "PO BOX 87407, Chicago, IL 60680",
+          "addressLine1": "PO BOX 87407",
+          "addressLine2": null,
+          "city": "Chicago",
+          "state": "IL",
+          "zipCode": "60680"
+        }
+      },
+      "ownerOccupied": false
+    },
+    {
+      "id": "100-Wycliffe,-Irvine,-CA-92602",
+      "formattedAddress": "100 Wycliffe, Irvine, CA 92602",
+      "addressLine1": "100 Wycliffe",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92602",
+      "county": "Orange",
+      "latitude": 33.720932,
+      "longitude": -117.784769,
+      "propertyType": "Apartment",
+      "lotSize": 73272,
+      "yearBuilt": 2004,
+      "assessorID": "528-141-01",
+      "legalDescription": "N TR 16319 BLK LOT 6",
+      "features": {
+        "architectureType": "Multi-Unit Building"
+      },
+      "taxAssessments": {
+        "2023": {
+          "year": 2023,
+          "value": 3585168,
+          "land": 476538,
+          "improvements": 3108630
+        }
+      },
+      "propertyTaxes": {
+        "2023": {
+          "year": 2023,
+          "total": 36817
+        }
+      },
+      "owner": {
+        "names": [
+          "IRVINE CO"
+        ],
+        "mailingAddress": {
+          "id": "PO-BOX-2450,-Newport-Beach,-CA-92658",
+          "formattedAddress": "PO BOX 2450, Newport Beach, CA 92658",
+          "addressLine1": "PO BOX 2450",
+          "addressLine2": null,
+          "city": "Newport Beach",
+          "state": "CA",
+          "zipCode": "92658"
+        }
+      },
+      "ownerOccupied": false
+    },
+    {
+      "id": "1100-Stanford,-Irvine,-CA-92612",
+      "formattedAddress": "1100 Stanford, Irvine, CA 92612",
+      "addressLine1": "1100 Stanford",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92612",
+      "county": "Orange",
+      "latitude": 33.652423,
+      "longitude": -117.838642,
+      "propertyType": "Apartment",
+      "squareFootage": 112680,
+      "lotSize": 234462,
+      "yearBuilt": 1986,
+      "assessorID": "455-041-13",
+      "legalDescription": "N TR 12425 BLK LOT 1 TR 12425 LOT 1 AND LOT 2",
+      "features": {
+        "architectureType": "Multi-Unit Building",
+        "unitCount": 126
+      },
+      "taxAssessments": {
+        "2020": {
+          "year": 2020,
+          "value": 14043109,
+          "land": 2919218,
+          "improvements": 11123891
+        },
+        "2023": {
+          "year": 2023,
+          "value": 14960824,
+          "land": 3068619,
+          "improvements": 11892205
+        }
+      },
+      "propertyTaxes": {
+        "2020": {
+          "year": 2020,
+          "total": 159663
+        },
+        "2023": {
+          "year": 2023,
+          "total": 169656
+        }
+      },
+      "owner": {
+        "names": [
+          "DARTMOUTH COURT APARTMENTS LLC"
+        ],
+        "type": "Organization",
+        "mailingAddress": {
+          "id": "PO-BOX-2450,-Newport-Beach,-CA-92658",
+          "formattedAddress": "PO BOX 2450, Newport Beach, CA 92658",
+          "addressLine1": "PO BOX 2450",
+          "addressLine2": null,
+          "city": "Newport Beach",
+          "state": "CA",
+          "zipCode": "92658"
+        }
+      },
+      "ownerOccupied": false
+    },
+    {
+      "id": "100-Grand-Canal-Rd,-Irvine,-CA-92620",
+      "formattedAddress": "100 Grand Canal Rd, Irvine, CA 92620",
+      "addressLine1": "100 Grand Canal Rd",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92620",
+      "county": "Orange County",
+      "latitude": 33.692434,
+      "longitude": -117.759696,
+      "propertyType": "Apartment",
+      "yearBuilt": 2012
+    },
+    {
+      "id": "100-Oak-Gln,-Irvine,-CA-92618",
+      "formattedAddress": "100 Oak Gln, Irvine, CA 92618",
+      "addressLine1": "100 Oak Gln",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92618",
+      "county": "Orange",
+      "latitude": 33.66316,
+      "longitude": -117.77587,
+      "propertyType": "Apartment",
+      "yearBuilt": 2001
+    },
+    {
+      "id": "100-Saint-Vincent,-Irvine,-CA-92618",
+      "formattedAddress": "100 Saint Vincent, Irvine, CA 92618",
+      "addressLine1": "100 Saint Vincent",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92618",
+      "county": "Orange",
+      "latitude": 33.66647,
+      "longitude": -117.79054,
+      "propertyType": "Apartment",
+      "yearBuilt": 1999
+    },
+    {
+      "id": "17321-Murphy-Ave,-Irvine,-CA-92614",
+      "formattedAddress": "17321 Murphy Ave, Irvine, CA 92614",
+      "addressLine1": "17321 Murphy Ave",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92614",
+      "county": "Orange",
+      "latitude": 33.68443,
+      "longitude": -117.83361,
+      "propertyType": "Apartment",
+      "yearBuilt": 2018
+    },
+    {
+      "id": "350-Gitano,-Irvine,-CA-92618",
+      "formattedAddress": "350 Gitano, Irvine, CA 92618",
+      "addressLine1": "350 Gitano",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92618",
+      "county": "Orange",
+      "latitude": 33.64593,
+      "longitude": -117.74972,
+      "propertyType": "Apartment",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "squareFootage": 973,
+      "yearBuilt": 2013
+    },
+    {
+      "id": "100-Stonecliffe-Aisle,-Irvine,-CA-92603",
+      "formattedAddress": "100 Stonecliffe Aisle, Irvine, CA 92603",
+      "addressLine1": "100 Stonecliffe Aisle",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92603",
+      "county": "Orange",
+      "latitude": 33.643875,
+      "longitude": -117.803577,
+      "propertyType": "Apartment",
+      "yearBuilt": 1991
+    },
+    {
+      "id": "1103-Esperanza,-Irvine,-CA-92618",
+      "formattedAddress": "1103 Esperanza, Irvine, CA 92618",
+      "addressLine1": "1103 Esperanza",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92618",
+      "county": "Orange",
+      "latitude": 33.696385,
+      "longitude": -117.738411,
+      "propertyType": "Multi-Family",
+      "lotSize": 729087,
+      "yearBuilt": 2009,
+      "assessorID": "580-111-73",
+      "legalDescription": "N TR 17121 BLK LOT 1",
+      "features": {
+        "architectureType": "Multi-Unit Building",
+        "unitCount": 1
+      },
+      "taxAssessments": {
+        "2023": {
+          "year": 2023,
+          "value": 61531643,
+          "land": 1257988,
+          "improvements": 60273655
+        }
+      },
+      "propertyTaxes": {
+        "2023": {
+          "year": 2023,
+          "total": 659113
+        }
+      },
+      "owner": {
+        "names": [
+          "ESPERANZA APTS LLC"
+        ],
+        "mailingAddress": {
+          "id": "PO-BOX-2450,-Newport-Beach,-CA-92658",
+          "formattedAddress": "PO BOX 2450, Newport Beach, CA 92658",
+          "addressLine1": "PO BOX 2450",
+          "addressLine2": null,
+          "city": "Newport Beach",
+          "state": "CA",
+          "zipCode": "92658"
+        }
+      },
+      "ownerOccupied": false
+    },
+    {
+      "id": "18000-Spectrum,-Irvine,-CA-92618",
+      "formattedAddress": "18000 Spectrum, Irvine, CA 92618",
+      "addressLine1": "18000 Spectrum",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92618",
+      "county": "Orange",
+      "latitude": 33.653335,
+      "longitude": -117.751033,
+      "propertyType": "Apartment",
+      "yearBuilt": 2009,
+      "features": {
+        "unitCount": 1456
+      }
+    },
+    {
+      "id": "2810-Warner-Ave,-Irvine,-CA-92606",
+      "formattedAddress": "2810 Warner Ave, Irvine, CA 92606",
+      "addressLine1": "2810 Warner Ave",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92606",
+      "county": "Orange County",
+      "latitude": 33.69926,
+      "longitude": -117.82088,
+      "propertyType": "Apartment",
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "yearBuilt": 1995
+    },
+    {
+      "id": "31-Giovanni-Aisle,-Irvine,-CA-92614",
+      "formattedAddress": "31 Giovanni Aisle, Irvine, CA 92614",
+      "addressLine1": "31 Giovanni Aisle",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92614",
+      "county": "Orange",
+      "latitude": 33.682231,
+      "longitude": -117.829174,
+      "propertyType": "Single Family",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "squareFootage": 1032
+    },
+    {
+      "id": "60-Rose-Arch,-Irvine,-CA-92620",
+      "formattedAddress": "60 Rose Arch, Irvine, CA 92620",
+      "addressLine1": "60 Rose Arch",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92620",
+      "county": "Orange",
+      "latitude": 33.70579,
+      "longitude": -117.770518,
+      "propertyType": "Condo",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "squareFootage": 1123,
+      "yearBuilt": 2014,
+      "assessorID": "93131413",
+      "legalDescription": "LOT 1 OF TRACT 17514 OF CONDO PROJECT 931-31 LOCATED ON APN 551-641-44, TOGETHER WITH AN UND 1/21 INT IN LOTS 1 & 2 (BLDG 2); WITH A RIGHT TO USE CARPORT NUMBER 52",
+      "features": {
+        "garage": true,
+        "garageType": "Garage"
+      },
+      "owner": {
+        "names": [
+          ""
+        ]
+      },
+      "ownerOccupied": false
+    },
+    {
+      "id": "2277-Scholarship,-Irvine,-CA-92612",
+      "formattedAddress": "2277 Scholarship, Irvine, CA 92612",
+      "addressLine1": "2277 Scholarship",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92612",
+      "county": "Orange",
+      "latitude": 33.668666,
+      "longitude": -117.851184,
+      "propertyType": "Condo",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "squareFootage": 1038,
+      "yearBuilt": 2005,
+      "assessorID": "930-304-55",
+      "legalDescription": "TRACT 16948, LOT 2 OF PROJECT 930-30 LOCATED ON AP 445-181-48 TOGETHER WITH AN UND 1/154 INT IN LOT 2.",
+      "subdivision": "AVENUE ONE PHASE 1",
+      "features": {
+        "architectureType": "Condo / Apartment",
+        "unitCount": 1
+      },
+      "taxAssessments": {
+        "2019": {
+          "year": 2019,
+          "value": 440978,
+          "land": 201140,
+          "improvements": 239838
+        }
+      },
+      "propertyTaxes": {
+        "2019": {
+          "year": 2019,
+          "total": 5040
+        }
+      },
+      "owner": {
+        "names": [
+          "FU CHIN ROBERT WANG"
+        ],
+        "mailingAddress": {
+          "id": "18538-Saint-Andrews-Pl,-Torrance,-CA-90504",
+          "addressLine1": "18538 Saint Andrews Pl",
+          "addressLine2": null,
+          "city": "Torrance",
+          "state": "CA",
+          "zipCode": "90504"
+        }
+      },
+      "ownerOccupied": false
+    },
+    {
+      "id": "8-Champlain,-Irvine,-CA-92620",
+      "formattedAddress": "8 Champlain, Irvine, CA 92620",
+      "addressLine1": "8 Champlain",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92620",
+      "county": "Orange",
+      "latitude": 33.714106,
+      "longitude": -117.768056,
+      "propertyType": "Single Family",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "squareFootage": 2713,
+      "lotSize": 4800,
+      "yearBuilt": 1979,
+      "assessorID": "529-083-07",
+      "legalDescription": "N TR 9161 BLK LOT 18",
+      "subdivision": "9161",
+      "features": {
+        "floorCount": 2,
+        "garage": true,
+        "garageType": "Garage",
+        "roomCount": 8,
+        "unitCount": 1
+      },
+      "taxAssessments": {
+        "2022": {
+          "year": 2022,
+          "value": 928319,
+          "land": 713797,
+          "improvements": 214522
+        },
+        "2023": {
+          "year": 2023,
+          "value": 946885,
+          "land": 728073,
+          "improvements": 218812
+        }
+      },
+      "propertyTaxes": {
+        "2022": {
+          "year": 2022,
+          "total": 9762
+        },
+        "2023": {
+          "year": 2023,
+          "total": 9948
+        }
+      },
+      "owner": {
+        "names": [
+          "ANDY MINGHUEI HAN",
+          "RACHEL JUAN HUEIFEN HAN",
+          "AHRH LIVING TRUST"
+        ],
+        "type": "Organization"
+      },
+      "ownerOccupied": false
+    },
+    {
+      "id": "160-Fixie,-Irvine,-CA-92618",
+      "formattedAddress": "160 Fixie, Irvine, CA 92618",
+      "addressLine1": "160 Fixie",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92618",
+      "county": "Orange",
+      "latitude": 33.69035,
+      "longitude": -117.733841,
+      "propertyType": "Condo",
+      "bedrooms": 3,
+      "bathrooms": 3.5,
+      "squareFootage": 1774,
+      "lotSize": 1774,
+      "yearBuilt": 2017,
+      "assessorID": "930-171-11",
+      "legalDescription": "N TR 17733 BLK LOT 1 UN 24 LOT 1 OF TRACT 17733 OF CONDO PROJECT 930-17",
+      "features": {
+        "architectureType": "Condo / Apartment",
+        "garage": true,
+        "garageSpaces": 2,
+        "garageType": "Garage"
+      },
+      "taxAssessments": {
+        "2019": {
+          "year": 2019,
+          "value": 697669,
+          "land": 419795,
+          "improvements": 277874
+        }
+      },
+      "propertyTaxes": {
+        "2019": {
+          "year": 2019,
+          "total": 12535
+        }
+      },
+      "owner": {
+        "names": [
+          "XIN JIN"
+        ],
+        "mailingAddress": {
+          "id": "160-FIXIE,-Irvine,-CA-92618",
+          "addressLine1": "160 FIXIE",
+          "addressLine2": null,
+          "city": "Irvine",
+          "state": "CA",
+          "zipCode": "92618"
+        }
+      },
+      "ownerOccupied": true
+    },
+    {
+      "id": "54-Lakefront,-Irvine,-CA-92604",
+      "formattedAddress": "54 Lakefront, Irvine, CA 92604",
+      "addressLine1": "54 Lakefront",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92604",
+      "county": "Orange",
+      "latitude": 33.678402,
+      "longitude": -117.796481,
+      "propertyType": "Single Family",
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "squareFootage": 2050
+    },
+    {
+      "id": "143-Goldenrod,-Unit-64,-Irvine,-CA-92614",
+      "formattedAddress": "143 Goldenrod, Unit 64, Irvine, CA 92614",
+      "addressLine1": "143 Goldenrod",
+      "addressLine2": "Unit 64",
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92614",
+      "county": "Orange",
+      "latitude": 33.671769,
+      "longitude": -117.799207,
+      "propertyType": "Condo",
+      "bedrooms": 2,
+      "bathrooms": 2.5,
+      "squareFootage": 1176,
+      "yearBuilt": 1985
+    },
+    {
+      "id": "167-Magnet,-Irvine,-CA-92618",
+      "formattedAddress": "167 Magnet, Irvine, CA 92618",
+      "addressLine1": "167 Magnet",
+      "addressLine2": null,
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92618",
+      "county": "Orange",
+      "latitude": 33.68502,
+      "longitude": -117.74122,
+      "propertyType": "Condo",
+      "bedrooms": 3,
+      "bathrooms": 3.5,
+      "squareFootage": 1810,
+      "lotSize": 1810,
+      "yearBuilt": 2018,
+      "assessorID": "930-223-23",
+      "legalDescription": "N TR 17877 BLK LOT 1 UN 76 LOT 1 OF TRACT 17877 OF CONDO PROJECT 930-22",
+      "features": {
+        "architectureType": "Condo / Apartment",
+        "garage": true,
+        "garageType": "Garage"
+      },
+      "taxAssessments": {
+        "2023": {
+          "year": 2023,
+          "value": 710758,
+          "land": 356091,
+          "improvements": 354667
+        }
+      },
+      "propertyTaxes": {
+        "2023": {
+          "year": 2023,
+          "total": 13137
+        }
+      },
+      "owner": {
+        "names": [
+          "Lu Jiang"
+        ],
+        "type": "Individual",
+        "mailingAddress": {
+          "id": "8-N-1st-Ave,-Arcadia,-CA-91006",
+          "formattedAddress": "8 N 1st Ave, Arcadia, CA 91006",
+          "addressLine1": "8 N 1st Ave",
+          "addressLine2": null,
+          "city": "Arcadia",
+          "state": "CA",
+          "zipCode": "91006"
+        }
+      },
+      "ownerOccupied": false
+    },
+    {
+      "id": "2-Robinsong,-Unit-138,-Irvine,-CA-92614",
+      "formattedAddress": "2 Robinsong, Unit 138, Irvine, CA 92614",
+      "addressLine1": "2 Robinsong",
+      "addressLine2": "Unit 138",
+      "city": "Irvine",
+      "state": "CA",
+      "zipCode": "92614",
+      "county": "Orange County",
+      "latitude": 33.66676,
+      "longitude": -117.793047,
+      "propertyType": "Single Family",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "squareFootage": 1000,
+      "lotSize": 1000,
+      "yearBuilt": 1986
+    },
+    {
+        "id": "52-Latitude,-Irvine,-CA-92618",
+        "formattedAddress": "52 Latitude, Irvine, CA 92618",
+        "addressLine1": "52 Latitude",
+        "addressLine2": null,
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92618",
+        "county": "Orange County",
+        "latitude": 33.692907,
+        "longitude": -117.714691,
+        "bedrooms": 3,
+        "bathrooms": 3
+      },
+      {
+        "id": "107-Strawberry-Grv,-Irvine,-CA-92620",
+        "formattedAddress": "107 Strawberry Grv, Irvine, CA 92620",
+        "addressLine1": "107 Strawberry Grv",
+        "addressLine2": null,
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92620",
+        "county": "Orange",
+        "latitude": 33.685886,
+        "longitude": -117.760796,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1600,
+        "yearBuilt": 2013,
+        "assessorID": "931-315-01",
+        "legalDescription": "N TR 17512 BLK LOT 4 UN 13 LOT 4 OF TRACT 17512 OF CONDO PROJECT 931-31",
+        "features": {
+          "architectureType": "Condo / Apartment",
+          "garage": true,
+          "garageType": "Garage"
+        },
+        "taxAssessments": {
+          "2023": {
+            "year": 2023,
+            "value": 769610,
+            "land": 464747,
+            "improvements": 304863
+          }
+        },
+        "propertyTaxes": {
+          "2023": {
+            "year": 2023,
+            "total": 10672
+          }
+        },
+        "owner": {
+          "names": [
+            "Yee Ling Cheung",
+            "Po Yee Bonnie Hui"
+          ],
+          "mailingAddress": {
+            "id": "28-HILLSDALE,-Irvine,-CA-92602",
+            "formattedAddress": "28 HILLSDALE, Irvine, CA 92602",
+            "addressLine1": "28 HILLSDALE",
+            "addressLine2": null,
+            "city": "Irvine",
+            "state": "CA",
+            "zipCode": "92602"
+          }
+        },
+        "ownerOccupied": false
+      },
+      {
+        "id": "104-San-Benito,-Irvine,-CA-92618",
+        "formattedAddress": "104 San Benito, Irvine, CA 92618",
+        "addressLine1": "104 San Benito",
+        "addressLine2": null,
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92618",
+        "county": "Orange",
+        "latitude": 33.637543,
+        "longitude": -117.741559,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1870,
+        "lotSize": 6650,
+        "yearBuilt": 2021
+      },
+      {
+        "id": "401-Rockefeller,-Apt-1402,-Irvine,-CA-92612",
+        "formattedAddress": "401 Rockefeller, Apt 1402, Irvine, CA 92612",
+        "addressLine1": "401 Rockefeller",
+        "addressLine2": "Apt 1402",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92612",
+        "county": "Orange",
+        "latitude": 33.675691,
+        "longitude": -117.84905,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 2818,
+        "yearBuilt": 2007
+      },
+      {
+        "id": "500-Cardiff,---24-577,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 24-577, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 24-577",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange County",
+        "latitude": 33.688118,
+        "longitude": -117.806193,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1545
+      },
+      {
+        "id": "500-Cardiff,---19-516,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 19-516, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 19-516",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.68766,
+        "longitude": -117.807404,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1534
+      },
+      {
+        "id": "500-Cardiff,---23-554,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 23-554, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 23-554",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.68766,
+        "longitude": -117.807404,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1545
+      },
+      {
+        "id": "500-Cardiff,---27-616,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 27-616, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 27-616",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange County",
+        "latitude": 33.688118,
+        "longitude": -117.806193,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1534
+      },
+      {
+        "id": "500-Cardiff,---22-540,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 22-540, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 22-540",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange County",
+        "latitude": 33.688118,
+        "longitude": -117.806193,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1534
+      },
+      {
+        "id": "100-Stonecliffe-Aisle,---31-227,-Irvine,-CA-92603",
+        "formattedAddress": "100 Stonecliffe Aisle, # 31-227, Irvine, CA 92603",
+        "addressLine1": "100 Stonecliffe Aisle",
+        "addressLine2": "# 31-227",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92603",
+        "county": "Orange County",
+        "latitude": 33.643195,
+        "longitude": -117.804533,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1309
+      },
+      {
+        "id": "500-Cardiff,---25-585,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 25-585, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 25-585",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange County",
+        "latitude": 33.688118,
+        "longitude": -117.806193,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1473
+      },
+      {
+        "id": "15-15-Soho,---1,-Irvine,-CA-92612",
+        "formattedAddress": "15 15 Soho, # 1, Irvine, CA 92612",
+        "addressLine1": "15 15 Soho",
+        "addressLine2": "# 1",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92612",
+        "county": "Orange County",
+        "latitude": 33.674861,
+        "longitude": -117.849378,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3
+      },
+      {
+        "id": "100-Stonecliffe-Aisle,---05-121,-Irvine,-CA-92603",
+        "formattedAddress": "100 Stonecliffe Aisle, # 05-121, Irvine, CA 92603",
+        "addressLine1": "100 Stonecliffe Aisle",
+        "addressLine2": "# 05-121",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92603",
+        "county": "Orange",
+        "latitude": 33.643387,
+        "longitude": -117.803154,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1309
+      },
+      {
+        "id": "100-Stonecliffe-Aisle,---29-217,-Irvine,-CA-92603",
+        "formattedAddress": "100 Stonecliffe Aisle, # 29-217, Irvine, CA 92603",
+        "addressLine1": "100 Stonecliffe Aisle",
+        "addressLine2": "# 29-217",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92603",
+        "county": "Orange County",
+        "latitude": 33.643195,
+        "longitude": -117.804533,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1309
+      },
+      {
+        "id": "500-Cardiff,---30-659,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 30-659, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 30-659",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.688118,
+        "longitude": -117.806193,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1545
+      },
+      {
+        "id": "500-Cardiff,---22-543,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 22-543, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 22-543",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.68766,
+        "longitude": -117.807404,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1534
+      },
+      {
+        "id": "500-Cardiff,---19-518,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 19-518, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 19-518",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.68766,
+        "longitude": -117.807404,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1473
+      },
+      {
+        "id": "500-Cardiff,---23-548,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 23-548, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 23-548",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.68766,
+        "longitude": -117.807404,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1545
+      },
+      {
+        "id": "104-San-Benito,-Unit-1,-Irvine,-CA-92618",
+        "formattedAddress": "104 San Benito, Unit 1, Irvine, CA 92618",
+        "addressLine1": "104 San Benito",
+        "addressLine2": "Unit 1",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92618",
+        "county": "Orange",
+        "latitude": 33.637543,
+        "longitude": -117.741562,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1870
+      },
+      {
+        "id": "100-Stonecliffe-Aisle,---11-149,-Irvine,-CA-92603",
+        "formattedAddress": "100 Stonecliffe Aisle, # 11-149, Irvine, CA 92603",
+        "addressLine1": "100 Stonecliffe Aisle",
+        "addressLine2": "# 11-149",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92603",
+        "county": "Orange",
+        "latitude": 33.643387,
+        "longitude": -117.803154,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1309
+      },
+      {
+        "id": "500-Cardiff,---29-639,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 29-639, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 29-639",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.68766,
+        "longitude": -117.807404,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1545
+      },
+      {
+        "id": "500-Cardiff,---29-643,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 29-643, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 29-643",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.68766,
+        "longitude": -117.807404,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1545
+      },
+      {
+        "id": "100-Family-Tree,---20-2001,-Irvine,-CA-92618",
+        "formattedAddress": "100 Family Tree, # 20-2001, Irvine, CA 92618",
+        "addressLine1": "100 Family Tree",
+        "addressLine2": "# 20-2001",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92618",
+        "county": "Orange",
+        "latitude": 33.685688,
+        "longitude": -117.716255,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1333
+      },
+      {
+        "id": "500-Cardiff,---31-669,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 31-669, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 31-669",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.68766,
+        "longitude": -117.807404,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1545
+      },
+      {
+        "id": "500-Cardiff,---34-696,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 34-696, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 34-696",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.68766,
+        "longitude": -117.807404,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1545
+      },
+      {
+        "id": "500-Cardiff,---18-504,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 18-504, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 18-504",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.68766,
+        "longitude": -117.807404,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1534
+      },
+      {
+        "id": "100-Stonecliffe-Aisle,---38-251,-Irvine,-CA-92603",
+        "formattedAddress": "100 Stonecliffe Aisle, # 38-251, Irvine, CA 92603",
+        "addressLine1": "100 Stonecliffe Aisle",
+        "addressLine2": "# 38-251",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92603",
+        "county": "Orange",
+        "latitude": 33.643387,
+        "longitude": -117.803154,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1309
+      },
+      {
+        "id": "500-Cardiff,---31-664,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 31-664, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 31-664",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.68766,
+        "longitude": -117.807404,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1545
+      },
+      {
+        "id": "100-Stonecliffe-Aisle,---47-285,-Irvine,-CA-92603",
+        "formattedAddress": "100 Stonecliffe Aisle, # 47-285, Irvine, CA 92603",
+        "addressLine1": "100 Stonecliffe Aisle",
+        "addressLine2": "# 47-285",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92603",
+        "county": "Orange",
+        "latitude": 33.643387,
+        "longitude": -117.803154,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1309
+      },
+      {
+        "id": "500-Cardiff,---28-630,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 28-630, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 28-630",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.68766,
+        "longitude": -117.807404,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1545
+      },
+      {
+        "id": "500-Cardiff,---24-575,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 24-575, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 24-575",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.68766,
+        "longitude": -117.807404,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1545
+      },
+      {
+        "id": "500-Cardiff,---18-507,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 18-507, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 18-507",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.68766,
+        "longitude": -117.807404,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1534
+      },
+      {
+        "id": "500-Cardiff,---32-609,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 32-609, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 32-609",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.68766,
+        "longitude": -117.807404,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1534
+      },
+      {
+        "id": "100-Stonecliffe-Aisle,---05-122,-Irvine,-CA-92603",
+        "formattedAddress": "100 Stonecliffe Aisle, # 05-122, Irvine, CA 92603",
+        "addressLine1": "100 Stonecliffe Aisle",
+        "addressLine2": "# 05-122",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92603",
+        "county": "Orange",
+        "latitude": 33.643387,
+        "longitude": -117.803154,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1309
+      },
+      {
+        "id": "100-Stonecliffe-Aisle,---29-218,-Irvine,-CA-92603",
+        "formattedAddress": "100 Stonecliffe Aisle, # 29-218, Irvine, CA 92603",
+        "addressLine1": "100 Stonecliffe Aisle",
+        "addressLine2": "# 29-218",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92603",
+        "county": "Orange",
+        "latitude": 33.643387,
+        "longitude": -117.803154,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1309
+      },
+      {
+        "id": "100-Stonecliffe-Aisle,---16-168,-Irvine,-CA-92603",
+        "formattedAddress": "100 Stonecliffe Aisle, # 16-168, Irvine, CA 92603",
+        "addressLine1": "100 Stonecliffe Aisle",
+        "addressLine2": "# 16-168",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92603",
+        "county": "Orange",
+        "latitude": 33.643387,
+        "longitude": -117.803154,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1309
+      },
+      {
+        "id": "500-Cardiff,---23-552,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 23-552, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 23-552",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.68766,
+        "longitude": -117.807404,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1545
+      },
+      {
+        "id": "500-Cardiff,---30-655,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 30-655, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 30-655",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.68766,
+        "longitude": -117.807404,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1545
+      },
+      {
+        "id": "500-Cardiff,---35-682,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 35-682, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 35-682",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.68766,
+        "longitude": -117.807404,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1545
+      },
+      {
+        "id": "500-Cardiff,---33-567,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 33-567, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 33-567",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.68766,
+        "longitude": -117.807404,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1545
+      },
+      {
+        "id": "500-Cardiff,---31-662,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 31-662, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 31-662",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.68766,
+        "longitude": -117.807404,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1545
+      },
+      {
+        "id": "500-Cardiff,---28-628,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 28-628, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 28-628",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.68766,
+        "longitude": -117.807404,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1545
+      },
+      {
+        "id": "500-Cardiff,---30-657,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 30-657, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 30-657",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.68766,
+        "longitude": -117.807404,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1545
+      },
+      {
+        "id": "500-Cardiff,---26-600,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 26-600, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 26-600",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.68766,
+        "longitude": -117.807404,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1534
+      },
+      {
+        "id": "100-Stonecliffe-Aisle,---38-252,-Irvine,-CA-92603",
+        "formattedAddress": "100 Stonecliffe Aisle, # 38-252, Irvine, CA 92603",
+        "addressLine1": "100 Stonecliffe Aisle",
+        "addressLine2": "# 38-252",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92603",
+        "county": "Orange",
+        "latitude": 33.643387,
+        "longitude": -117.803154,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1309
+      },
+      {
+        "id": "100-Stonecliffe-Aisle,---08-134,-Irvine,-CA-92603",
+        "formattedAddress": "100 Stonecliffe Aisle, # 08-134, Irvine, CA 92603",
+        "addressLine1": "100 Stonecliffe Aisle",
+        "addressLine2": "# 08-134",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92603",
+        "county": "Orange",
+        "latitude": 33.643387,
+        "longitude": -117.803154,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1309
+      },
+      {
+        "id": "500-Cardiff,---25-587,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 25-587, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 25-587",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.68766,
+        "longitude": -117.807404,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1534
+      },
+      {
+        "id": "500-Cardiff,---33-571,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 33-571, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 33-571",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.68766,
+        "longitude": -117.807404,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1473
+      },
+      {
+        "id": "500-Cardiff,---36-703,-Irvine,-CA-92606",
+        "formattedAddress": "500 Cardiff, # 36-703, Irvine, CA 92606",
+        "addressLine1": "500 Cardiff",
+        "addressLine2": "# 36-703",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92606",
+        "county": "Orange",
+        "latitude": 33.68766,
+        "longitude": -117.807404,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1534
+      },
+      {
+        "id": "100-Stonecliffe-Aisle,---23-195,-Irvine,-CA-92603",
+        "formattedAddress": "100 Stonecliffe Aisle, # 23-195, Irvine, CA 92603",
+        "addressLine1": "100 Stonecliffe Aisle",
+        "addressLine2": "# 23-195",
+        "city": "Irvine",
+        "state": "CA",
+        "zipCode": "92603",
+        "county": "Orange",
+        "latitude": 33.643387,
+        "longitude": -117.803154,
+        "propertyType": "Apartment",
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "squareFootage": 1309
+      }
+  ]

@@ -1,5 +1,5 @@
 import { Card, Image, Text, HStack, colorPalettes, IconButton } from "@chakra-ui/react";
-import { FaHeart, FaHeartBroken, FaChevronUp } from "react-icons/fa";
+import { FaHeart, FaHeartBroken} from "react-icons/fa";
 import { motion, useAnimation } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { Description } from "./ui/description.jsx"
@@ -11,6 +11,9 @@ const Swipe = () => {
   const controls = useAnimation(); // Controls for the animation
   const [swiped, setSwiped] = useState(null); // Track swipe direction (optional)
   const [history, setHistory] = useState([]);
+  const [houses, setHouses] = useState([]);
+  const [randomIdx, setRandomIdx] = useState(null);
+  const [reloadDescription, setReloadDescription] = useState(false); // New state to trigger reload
   const cardRef = useRef(null);
 
   useEffect(() => {
@@ -18,21 +21,36 @@ const Swipe = () => {
   }, [history]);
 
   useEffect(() => {
-    if (cardRef.current) {
-      cardRef.current.focus(); // Autofocus the card when it mounts
-    }
-    // Fetch data from the API
-    const fetchData = async () => {
+    const fetchHouses = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:8000/");
-        console.log(response.data); // Log the data for debugging
-      } catch (err) {
-        console.error("Error fetching data:", err.message);
+        const response = await axios.get("http://localhost:8000/");
+
+        
+        setHouses(response.data.house_ids);
+
+        console.log("Response:", response.data);  
+        console.log("Houses array:", response.data.house_ids); 
+      } catch (error) {
+        console.error("Error fetching houses: ", error);
       }
     };
 
-    fetchData();
+    // Call the async function
+    fetchHouses();
   }, []);
+
+  useEffect(() => {
+    if (houses.length > 0) {
+      setRandomIdx(Math.floor(Math.random() * houses.length)); // Set initial random index once houses are loaded
+    }
+  }, [houses]); // Update randomIdx whenever houses array is updated
+
+
+  const getRandomHouse = () => {
+    const randomIdx = Math.floor(Math.random() * houses.length);
+    return randomIdx;
+  };
+
 
   const handleDragEnd = async (_, info) => {
     if (info.offset.x > 100) {
@@ -45,6 +63,10 @@ const Swipe = () => {
         transition: { duration: 0.5 },
       });
       setHistory((prevHistory) => [...prevHistory, "Right"]);
+
+      //update the text
+      setRandomIdx(Math.floor(Math.random() * houses.length));
+
     } else if (info.offset.x < -100) {
       setSwiped("left");
       console.log("Swiped Left");
@@ -55,6 +77,8 @@ const Swipe = () => {
         transition: { duration: 0.5 },
       });
       setHistory((prevHistory) => [...prevHistory, "Left"]);
+      //update the text
+      setRandomIdx(Math.floor(Math.random() * houses.length))
     } else {
       // Reset the card to its original position if no swipe
       controls.start({ x: 0 });
@@ -101,6 +125,7 @@ const Swipe = () => {
           });
           setHistory((prevHistory) => [...prevHistory, "Left"]);
           setSwiped(null);
+          setRandomIdx(Math.floor(Math.random() * houses.length))
           controls.start({ x: 0, opacity: 1 });
         } else if (event.key === "ArrowRight") {
           // Trigger right swipe animation
@@ -113,6 +138,7 @@ const Swipe = () => {
           });
           setHistory((prevHistory) => [...prevHistory, "Right"]);
           setSwiped(null);
+          setRandomIdx(Math.floor(Math.random() * houses.length))
           controls.start({ x: 0, opacity: 1 });
         }
       }}
@@ -124,7 +150,14 @@ const Swipe = () => {
       <Card.Body gap="2">
         <Card.Title>Location- City/State and Price</Card.Title>
         <Card.Description>
-
+           {houses.length > 0 && randomIdx !== null ? (
+                <Description
+                  address={`${houses[randomIdx].formattedAddress}`}
+                  bed={`${houses[randomIdx].bedrooms}`}
+                  bath={`${houses[randomIdx].bathrooms}`}
+                  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                />
+              ) : null}
         </Card.Description>
 
       </Card.Body>
