@@ -14,7 +14,7 @@ const Swipe = () => {
   const [history, setHistory] = useState([]);
   const [houses, setHouses] = useState([]);
   const [randomIdx, setRandomIdx] = useState(null);
-  const [mostRecentYear, setMostRecentYear] = useState(null);
+  // const [mostRecentYear, setMostRecentYear] = useState(null);
   const [reloadDescription, setReloadDescription] = useState(false); // New state to trigger reload
   const cardRef = useRef(null);
 
@@ -44,19 +44,20 @@ const Swipe = () => {
   useEffect(() => {
     if (houses.length > 0) {
       setRandomIdx(Math.floor(Math.random() * houses.length)); // Set initial random index once houses are loaded
+      // setRandomIdx(0);
     }
   }, [houses]); // Update randomIdx whenever houses array is updated
 
-  useEffect(() => {
-    if (randomIdx !== null && houses.length > 0) {
-      const house = houses[randomIdx]; // Ensure we use the updated randomIdx
-      if (house?.taxAssessments) {
-        setMostRecentYear(Math.max(...Object.keys(house.taxAssessments).map(Number)));
-      } else {
-        setMostRecentYear(null);
-      }
-    }
-  }, [randomIdx, houses]);
+  // useEffect(() => {
+  //   if (randomIdx !== null && houses.length > 0) {
+  //     const house = houses[randomIdx]; // Ensure we use the updated randomIdx
+  //     if (house?.taxAssessments) {
+  //       setMostRecentYear(Math.max(...Object.keys(house.taxAssessments).map(Number)));
+  //     } else {
+  //       setMostRecentYear(null);
+  //     }
+  //   }
+  // }, [randomIdx, houses]);
 
 
   const handleDragEnd = async (_, info) => {
@@ -73,11 +74,11 @@ const Swipe = () => {
 
       //update the text
       setRandomIdx(Math.floor(Math.random() * houses.length));
-      if (houses[randomIdx].taxAssessments) {
-        setMostRecentYear(Math.max(...Object.keys(houses[randomIdx].taxAssessments).map(Number)));
-      } else {
-        setMostRecentYear(null);
-      }
+      // if (houses[randomIdx].taxAssessments) {
+      //   setMostRecentYear(Math.max(...Object.keys(houses[randomIdx].taxAssessments).map(Number)));
+      // } else {
+      //   setMostRecentYear(null);
+      // }
 
     } else if (info.offset.x < -100) {
       setSwiped("left");
@@ -91,11 +92,11 @@ const Swipe = () => {
       setHistory((prevHistory) => [...prevHistory, "Left"]);
       //update the text
       setRandomIdx(Math.floor(Math.random() * houses.length))
-      if (houses[randomIdx].taxAssessments) {
-        setMostRecentYear(Math.max(...Object.keys(houses[randomIdx].taxAssessments).map(Number)));
-      } else {
-        setMostRecentYear(null);
-      }
+      // if (houses[randomIdx].taxAssessments) {
+      //   setMostRecentYear(Math.max(...Object.keys(houses[randomIdx].taxAssessments).map(Number)));
+      // } else {
+      //   setMostRecentYear(null);
+      // }
     } else {
       // Reset the card to its original position if no swipe
       controls.start({ x: 0 });
@@ -144,11 +145,11 @@ const Swipe = () => {
           setHistory((prevHistory) => [...prevHistory, "Left"]);
           setSwiped(null);
           setRandomIdx(Math.floor(Math.random() * houses.length));
-          if (houses[randomIdx].taxAssessments) {
-            setMostRecentYear(Math.max(...Object.keys(houses[randomIdx].taxAssessments).map(Number)));
-          } else {
-            setMostRecentYear(null);
-          }
+          // if (houses[randomIdx].taxAssessments) {
+          //   setMostRecentYear(Math.max(...Object.keys(houses[randomIdx].taxAssessments).map(Number)));
+          // } else {
+          //   setMostRecentYear(null);
+          // }
           controls.start({ x: 0, opacity: 1 });
         } else if (event.key === "ArrowRight") {
           // Trigger right swipe animation
@@ -162,11 +163,11 @@ const Swipe = () => {
           setHistory((prevHistory) => [...prevHistory, "Right"]);
           setSwiped(null);
           setRandomIdx(Math.floor(Math.random() * houses.length));
-          if (houses[randomIdx].taxAssessments) {
-            setMostRecentYear(Math.max(...Object.keys(houses[randomIdx].taxAssessments).map(Number)));
-          } else {
-            setMostRecentYear(null);
-          }
+          // if (houses[randomIdx].taxAssessments) {
+          //   setMostRecentYear(Math.max(...Object.keys(houses[randomIdx].taxAssessments).map(Number)));
+          // } else {
+          //   setMostRecentYear(null);
+          // }
           controls.start({ x: 0, opacity: 1 });
         }
       }}
@@ -184,9 +185,9 @@ const Swipe = () => {
           <>
             {houses[randomIdx].city}/{houses[randomIdx].state}
             {
-              mostRecentYear && houses[randomIdx]?.taxAssessments?.[mostRecentYear]?.value ? (
+              houses[randomIdx]?.price ? (
                 <>
-                  - ${houses[randomIdx].taxAssessments[mostRecentYear].value}
+                  - ${houses[randomIdx].price}
                 </>
               ) : null
             }
