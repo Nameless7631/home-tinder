@@ -32,6 +32,7 @@ const Swipe = () => {
 
         console.log("Response:", response.data);  
         console.log("Houses array:", response.data.house_ids); 
+        console.log("house length", houses.length)
       } catch (error) {
         console.error("Error fetching houses: ", error);
       }
@@ -202,7 +203,7 @@ const Swipe = () => {
                   bed={`${houses[randomIdx].bedrooms}`}
                   bath={`${houses[randomIdx].bathrooms}`}
                   sqft={`${houses[randomIdx].squareFootage}`}
-                  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                  text={`${houses[randomIdx].text}`}
                 />
               ) : null}
         </Card.Description>
