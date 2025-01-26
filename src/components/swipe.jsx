@@ -5,7 +5,6 @@ import { motion, useAnimation } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { Description } from "./ui/description.jsx"
 import axios from "axios";
-import axios from "axios";
 
 
 
@@ -364,8 +363,7 @@ const Swipe = () => {
         <HStack>
         <IoMdPin color="#EA4335" style={{ fontSize: '28px' }}/>
         <Card.Title fontSize="20px">
-            {house.propertyType}-
-            {house.city} / {house.state}
+            {house.propertyType} - {house.city} / {house.state}
             {
               house?.price ? (
                 <>
@@ -381,7 +379,8 @@ const Swipe = () => {
               bed={`${house?.bedrooms}`}
               bath={`${house?.bathrooms}`}
               sqft={`${house?.squareFootage}`}
-              text={`${algo[house.propertyType]}`}
+              // text={`${algo[house.propertyType]}`}
+              text={`${house.text}`}
               // text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
             />
         </Card.Description>
