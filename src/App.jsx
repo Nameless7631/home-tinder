@@ -11,6 +11,8 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/survey" element={<Survey />} />
+          {/* <Route path="/saved" element={<SavedPage />} /> */}
+          {/* <Route path="/login" element={<LoginPage />} /> */}
           <Route path="/home" element={<Home />} />
           {/* <Route path="/saved" element={<SavedPage />} /> */}
           {/* <Route path="/login" element={<LoginPage />} /> */}
