@@ -4,7 +4,7 @@ import { IoMdPin } from "react-icons/io";
 import { motion, useAnimation } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { Description } from "./ui/description.jsx"
-import axios from "axios";
+// import axios from "axios";
 
 
 
@@ -62,19 +62,20 @@ const Swipe = () => {
   useEffect(() => {
     if (houses.length > 0) {
       setRandomIdx(Math.floor(Math.random() * houses.length)); // Set initial random index once houses are loaded
+      // setRandomIdx(0);
     }
   }, [houses]); // Update randomIdx whenever houses array is updated
 
-  useEffect(() => {
-    if (randomIdx !== null && houses.length > 0) {
-      const house = houses[randomIdx]; // Ensure we use the updated randomIdx
-      if (house?.taxAssessments) {
-        setMostRecentYear(Math.max(...Object.keys(house.taxAssessments).map(Number)));
-      } else {
-        setMostRecentYear(null);
-      }
-    }
-  }, [randomIdx, houses]);
+  // useEffect(() => {
+  //   if (randomIdx !== null && houses.length > 0) {
+  //     const house = houses[randomIdx]; // Ensure we use the updated randomIdx
+  //     if (house?.taxAssessments) {
+  //       setMostRecentYear(Math.max(...Object.keys(house.taxAssessments).map(Number)));
+  //     } else {
+  //       setMostRecentYear(null);
+  //     }
+  //   }
+  // }, [randomIdx, houses]);
 
 
   const handleDragEnd = async (_, info) => {
@@ -197,7 +198,7 @@ const Swipe = () => {
         
         animate={controls} // Use controls for exit animation
         style={{ width: "400px" }}
-      >
+      > 
     <Card.Root 
       outline='none'
       ref={cardRef}
@@ -318,9 +319,9 @@ const Swipe = () => {
           <>
             {houses[randomIdx].city}/{houses[randomIdx].state}
             {
-              mostRecentYear && houses[randomIdx]?.taxAssessments?.[mostRecentYear]?.value ? (
+              houses[randomIdx]?.price ? (
                 <>
-                  - ${houses[randomIdx].taxAssessments[mostRecentYear].value}
+                  - ${houses[randomIdx].price}
                 </>
               ) : null
             }
