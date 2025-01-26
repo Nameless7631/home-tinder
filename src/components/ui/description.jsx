@@ -18,7 +18,8 @@ const Description = ({address, bed, bath, sqft,text}) => {
                 <>
                 Address: {address}<br/>
                 </>
-            ) : <></>}
+            ) : <></>
+            }
              {(bed > 0) ? (
                 <>
                 Bed: {bed}<br/>
@@ -40,15 +41,11 @@ const Description = ({address, bed, bath, sqft,text}) => {
         {isOpen && (
             <Box style={{ display: "inline"}}>
                 {secondHalf}
-            </Box>
-            {isOpen && (
                 <Box style={{ display: "inline", marginLeft: "5px" }}>
                     text ever since the 1500s, when an unknown printer took a
                     galley of type and scrambled it to make a type specimen book.
                 </Box>
-            )}
-        </Box>
-    );
+            </Box>
         )}
     </Box>
   );
