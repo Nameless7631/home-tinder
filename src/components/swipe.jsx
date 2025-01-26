@@ -3,7 +3,7 @@ import { FaHeart, FaHeartBroken, FaChevronUp } from "react-icons/fa";
 import { motion, useAnimation } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { Description } from "./ui/description.jsx"
-import axios from "axios";
+// import axios from "axios";
 
 
 
@@ -17,22 +17,22 @@ const Swipe = () => {
     console.log("Updated history:", history);
   }, [history]);
 
-  useEffect(() => {
-    if (cardRef.current) {
-      cardRef.current.focus(); // Autofocus the card when it mounts
-    }
-    // Fetch data from the API
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("http://127.0.0.1:8000/");
-        console.log(response.data); // Log the data for debugging
-      } catch (err) {
-        console.error("Error fetching data:", err.message);
-      }
-    };
+  // useEffect(() => {
+  //   if (cardRef.current) {
+  //     cardRef.current.focus(); // Autofocus the card when it mounts
+  //   }
+  //   // Fetch data from the API
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get("http://127.0.0.1:8000/");
+  //       console.log(response.data); // Log the data for debugging
+  //     } catch (err) {
+  //       console.error("Error fetching data:", err.message);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   const handleDragEnd = async (_, info) => {
     if (info.offset.x > 100) {
@@ -81,7 +81,7 @@ const Swipe = () => {
         
         animate={controls} // Use controls for exit animation
         style={{ width: "400px" }}
-      >
+      > 
     <Card.Root 
       outline='none'
       ref={cardRef}
