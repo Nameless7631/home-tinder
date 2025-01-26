@@ -1,4 +1,4 @@
-import { Card, Image, Text, HStack, colorPalettes, IconButton } from "@chakra-ui/react";
+import { Card, Image, Text, HStack, colorPalettes, IconButton, Button } from "@chakra-ui/react";
 import { FaHeart, FaHeartBroken} from "react-icons/fa";
 import { IoMdPin } from "react-icons/io";
 import { motion, useAnimation } from "framer-motion";
@@ -14,9 +14,27 @@ const Swipe = () => {
   const [history, setHistory] = useState([]);
   const [houses, setHouses] = useState([]);
   const [randomIdx, setRandomIdx] = useState(null);
-  // const [mostRecentYear, setMostRecentYear] = useState(null);
-  const [reloadDescription, setReloadDescription] = useState(false); // New state to trigger reload
+  const [mostRecentYear, setMostRecentYear] = useState(null);
   const cardRef = useRef(null);
+
+  const [formData, setFormData] = useState({
+    address: "",
+    bedrooms: "",
+    bathrooms: "",
+    price: "",
+    property_type: "",
+    like: false,
+  });
+
+  // const handleSubmit = async () => {
+  //   const response = await axios.post('http://localhost:8000/history', formData);
+  //   console.log(response);
+  // }
+
+
+  useEffect(() => {
+    console.log("Form data:", formData);
+  }, [formData]);
 
   useEffect(() => {
     console.log("Updated history:", history);
@@ -65,44 +83,89 @@ const Swipe = () => {
     if (info.offset.x > 100) {
       setSwiped("right");
       console.log("Swiped Right");
-      // Exit animation for swipe right
       await controls.start({
         x: 300,
         opacity: 0,
         transition: { duration: 0.5 },
       });
-      setHistory((prevHistory) => [...prevHistory, "Right"]);
+      setHistory((prevHistory) => [...prevHistory, randomIdx]);
 
-      //update the text
       setRandomIdx(Math.floor(Math.random() * houses.length));
-      // if (houses[randomIdx].taxAssessments) {
-      //   setMostRecentYear(Math.max(...Object.keys(houses[randomIdx].taxAssessments).map(Number)));
-      // } else {
-      //   setMostRecentYear(null);
-      // }
+      if (houses[randomIdx].taxAssessments) {
+        setMostRecentYear(Math.max(...Object.keys(houses[randomIdx].taxAssessments).map(Number)));
+        setFormData({
+          address: houses[randomIdx].formattedAddress,
+          bedrooms: houses[randomIdx].bedrooms  ? houses[randomIdx].bedrooms : 0,
+          bathrooms: houses[randomIdx].bathrooms ? houses[randomIdx].bedrooms : 0,
+          price: houses[randomIdx].taxAssessments[mostRecentYear].value ? houses[randomIdx].taxAssessments[mostRecentYear].value : "",
+        });
+      } else {
+        setMostRecentYear(null);
+        setFormData({
+          address: houses[randomIdx].formattedAddress,
+          bedrooms: houses[randomIdx].bedrooms  ? houses[randomIdx].bedrooms : 0,
+          bathrooms: houses[randomIdx].bathrooms ? houses[randomIdx].bedrooms : 0,
+          price: "",
+        });
+      }
+      // Prepare history data from current house
+      const historyData = {
+        address: currentHouse.formattedAddress,
+        property_type: currentHouse.propertyType,
+        bedrooms: Number(currentHouse.bedrooms || 0),
+        bathrooms: Number(currentHouse.bathrooms || 0),
+        price: currentHouse.taxAssessments?.[currentYear]?.value 
+          ? Number(currentHouse.taxAssessments[currentYear].value) 
+          : "",
+          like: true
+      };
+      await axios.post('http://localhost:8000/history/', historyData);
 
     } else if (info.offset.x < -100) {
       setSwiped("left");
       console.log("Swiped Left");
-      // Exit animation for swipe left
       await controls.start({
         x: -300,
         opacity: 0,
         transition: { duration: 0.5 },
       });
-      setHistory((prevHistory) => [...prevHistory, "Left"]);
-      //update the text
-      setRandomIdx(Math.floor(Math.random() * houses.length))
-      // if (houses[randomIdx].taxAssessments) {
-      //   setMostRecentYear(Math.max(...Object.keys(houses[randomIdx].taxAssessments).map(Number)));
-      // } else {
-      //   setMostRecentYear(null);
-      // }
+      setHistory((prevHistory) => [...prevHistory, randomIdx]);
+
+      // Now update for next house
+      setRandomIdx(Math.floor(Math.random() * houses.length));
+      if (houses[randomIdx].taxAssessments) {
+        setMostRecentYear(Math.max(...Object.keys(houses[randomIdx].taxAssessments).map(Number)));
+        setFormData({
+          address: houses[randomIdx].formattedAddress,
+          bedrooms: houses[randomIdx].bedrooms  ? houses[randomIdx].bedrooms : 0,
+          bathrooms: houses[randomIdx].bathrooms ? houses[randomIdx].bedrooms : 0,
+          price: houses[randomIdx].taxAssessments[mostRecentYear].value ? houses[randomIdx].taxAssessments[mostRecentYear].value : "",
+        });
+        console.log(formData)
+      } else {
+        setMostRecentYear(null);
+        setFormData({
+          address: houses[randomIdx].formattedAddress,
+          bedrooms: houses[randomIdx].bedrooms  ? houses[randomIdx].bedrooms : 0,
+          bathrooms: houses[randomIdx].bathrooms ? houses[randomIdx].bedrooms : 0,
+          price: "",
+        });
+      }
+      // Prepare history data from current house
+      const historyData = {
+        address: currentHouse.formattedAddress,
+        property_type: currentHouse.propertyType,
+        bedrooms: Number(currentHouse.bedrooms || 0),
+        bathrooms: Number(currentHouse.bathrooms || 0),
+        price: currentHouse.taxAssessments?.[currentYear]?.value 
+          ? Number(currentHouse.taxAssessments[currentYear].value) 
+          : "",
+          like: false
+      };
+      await axios.post('http://localhost:8000/history/', historyData);
     } else {
-      // Reset the card to its original position if no swipe
       controls.start({ x: 0 });
     }
-    // Reset swiped state and animation after swipe
     setSwiped(null);
     controls.start({ x: 0, opacity: 1 });
   };
@@ -119,56 +182,118 @@ const Swipe = () => {
     >
       <motion.div
         drag="x"
-        dragConstraints={{ left: 0, right: 0 }} // Only allow horizontal dragging
-        onDragEnd={handleDragEnd} // Trigger action after dragging
+        dragConstraints={{ left: 0, right: 0 }}
+        onDragEnd={handleDragEnd}
         initial={{ scale: 1 }}
         
-        animate={controls} // Use controls for exit animation
+        animate={controls}
         style={{ width: "400px" }}
-      >
+      > 
     <Card.Root 
       outline='none'
       ref={cardRef}
       maxW="xl" 
       overflow="hidden" 
       h="900px"
+      tabIndex={0}
+      h="800px"
       tabIndex={0} // Makes the card focusable to capture key events
       onKeyDown={async (event) => {
         if (event.key === "ArrowLeft") {
-          // Trigger left swipe animation
           setSwiped("left");
           console.log("Swiped Left with Arrow Key");
+          // Get current house data before changing randomIdx
+          const currentHouse = houses[randomIdx];
+          const currentYear = mostRecentYear;
+          
           await controls.start({
             x: -300,
             opacity: 0,
             transition: { duration: 0.5 },
           });
-          setHistory((prevHistory) => [...prevHistory, "Left"]);
-          setSwiped(null);
+          setHistory((prevHistory) => [...prevHistory, randomIdx]);
+
+          // Prepare history data from current house
+          const historyData = {
+            address: currentHouse.formattedAddress,
+            property_type: currentHouse.propertyType,
+            bedrooms: Number(currentHouse.bedrooms || 0),
+            bathrooms: Number(currentHouse.bathrooms || 0),
+            price: currentHouse.taxAssessments?.[currentYear]?.value 
+              ? Number(currentHouse.taxAssessments[currentYear].value) 
+              : "",
+              like: false
+          };
+          await axios.post('http://localhost:8000/history/', historyData);
+
+          // Now update for next house
           setRandomIdx(Math.floor(Math.random() * houses.length));
-          // if (houses[randomIdx].taxAssessments) {
-          //   setMostRecentYear(Math.max(...Object.keys(houses[randomIdx].taxAssessments).map(Number)));
-          // } else {
-          //   setMostRecentYear(null);
-          // }
+          if (houses[randomIdx].taxAssessments) {
+            setMostRecentYear(Math.max(...Object.keys(houses[randomIdx].taxAssessments).map(Number)));
+            setFormData({
+              address: houses[randomIdx].formattedAddress,
+              bedrooms: houses[randomIdx].bedrooms  ? houses[randomIdx].bedrooms : 0,
+              bathrooms: houses[randomIdx].bathrooms ? houses[randomIdx].bedrooms : 0,
+              price: houses[randomIdx].taxAssessments[mostRecentYear].value ? houses[randomIdx].taxAssessments[mostRecentYear].value : "",
+            });
+            console.log(formData)
+          } else {
+            setMostRecentYear(null);
+            setFormData({
+              address: houses[randomIdx].formattedAddress,
+              bedrooms: houses[randomIdx].bedrooms  ? houses[randomIdx].bedrooms : 0,
+              bathrooms: houses[randomIdx].bathrooms ? houses[randomIdx].bedrooms : 0,
+              price: "",
+            });
+          }
+          console.log(formData)
           controls.start({ x: 0, opacity: 1 });
         } else if (event.key === "ArrowRight") {
-          // Trigger right swipe animation
           setSwiped("right");
           console.log("Swiped Right with Arrow Key");
+          // Get current house data before changing randomIdx
+          const currentHouse = houses[randomIdx];
+          const currentYear = mostRecentYear;
           await controls.start({
             x: 300,
             opacity: 0,
             transition: { duration: 0.5 },
           });
-          setHistory((prevHistory) => [...prevHistory, "Right"]);
+          setHistory((prevHistory) => [...prevHistory, randomIdx]);
           setSwiped(null);
           setRandomIdx(Math.floor(Math.random() * houses.length));
-          // if (houses[randomIdx].taxAssessments) {
-          //   setMostRecentYear(Math.max(...Object.keys(houses[randomIdx].taxAssessments).map(Number)));
-          // } else {
-          //   setMostRecentYear(null);
-          // }
+          if (houses[randomIdx].taxAssessments) {
+            setMostRecentYear(Math.max(...Object.keys(houses[randomIdx].taxAssessments).map(Number)));
+            setFormData({
+              address: houses[randomIdx].formattedAddress,
+              bedrooms: houses[randomIdx].bedrooms  ? houses[randomIdx].bedrooms : 0,
+              bathrooms: houses[randomIdx].bathrooms ? houses[randomIdx].bedrooms : 0,
+              price: houses[randomIdx].taxAssessments[mostRecentYear].value ? houses[randomIdx].taxAssessments[mostRecentYear].value : "",
+            });
+            // console.log(formData)
+          } else {
+            setMostRecentYear(null);
+            setFormData({
+              address: houses[randomIdx].formattedAddress,
+              bedrooms: houses[randomIdx].bedrooms  ? houses[randomIdx].bedrooms : 0,
+              bathrooms: houses[randomIdx].bathrooms ? houses[randomIdx].bedrooms : 0,
+              price: "",
+            });
+          }
+          
+          const historyData = {
+            address: currentHouse.formattedAddress,
+            property_type: currentHouse.propertyType,
+            bedrooms: Number(currentHouse.bedrooms || 0),
+            bathrooms: Number(currentHouse.bathrooms || 0),
+            price: currentHouse.taxAssessments?.[currentYear]?.value 
+              ? Number(currentHouse.taxAssessments[currentYear].value) 
+              : "",
+            like: true
+          };
+          console.log("historyData", historyData);
+          const response = await axios.post('http://localhost:8000/history/', historyData);
+          console.log(response);
           controls.start({ x: 0, opacity: 1 });
         }
       }}

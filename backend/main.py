@@ -1,16 +1,19 @@
-from typing import Union
-from fastapi import FastAPI, Query # type: ignore
+from typing import Union, List, Dict, Any
+from fastapi import FastAPI, Query, Body # type: ignore
 from fastapi.middleware.cors import CORSMiddleware # type: ignore
 import os
 from openai import OpenAI
 from dotenv import load_dotenv, find_dotenv
 import json
+from pydantic import BaseModel
 
 _ = load_dotenv(find_dotenv())
 client = OpenAI(
     api_key=os.environ.get('OPENAI_API_KEY')
 
 )
+
+houses = []
 
 def generate_desc(house: dict):
     features = house.get('features', {})
@@ -43,11 +46,7 @@ def generate_desc(house: dict):
     )
 
     return completion.choices[0].message.content
-
-app = FastAPI()
-
-houses = []
-
+  
 count = 0
 with open('../dataset/irvineHomes.json', 'r') as file:
     data = json.load(file)
@@ -76,6 +75,27 @@ with open('../dataset/irvineHomes.json', 'r') as file:
         houses.append(newHouse)
 
 
+
+history = []
+preferences = []
+
+class Preferences(BaseModel):
+    houseType: List[str]
+    numberOfBeds: List[float]  # Changed to float since slider values might be decimals
+    numberOfBathrooms: List[float]
+    priceRange: List[float]
+    city: List[str]
+
+class HouseHistory(BaseModel):
+    address: str
+    bedrooms: float
+    bathrooms: float
+    price: Union[float, str]
+    property_type: str
+    like: bool
+      
+app = FastAPI()
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # Replace "*" with specific origins if necessary
@@ -84,15 +104,30 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
 @app.get("/")
 def read_root():
     return {"house_ids": houses}
-
 
 @app.post("/saved/{house_id}")
 def save_post(house_id : int):
     houses.append(house_id)
     return {"result" : "success"}
 
-# @app.post("/generate-desc")
+@app.get("/history")
+def get_history():
+    return {"history": history}
+
+@app.post("/history")
+def save_history(house_data: HouseHistory):
+    history.append(house_data.dict())
+    return {"result": "success"}
+
+@app.post("/preferences")
+def save_preferences(prefs: Preferences):
+    preferences.append(prefs.dict())
+    return {"result": "success", "preferences": prefs}
+
+@app.get("/preferences")
+def get_preferences():
+    return {"preferences": preferences}
+
