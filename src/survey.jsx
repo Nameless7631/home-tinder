@@ -292,7 +292,7 @@ const Survey = () => {
           _hover={{ bg: "#74995d" }}
           onClick={() => {
             handleSubmit();
-            // navigate("/main");
+            navigate("/main");
           }}
           >Submit</Button>
       </Stack>

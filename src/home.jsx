@@ -137,7 +137,7 @@ const Home = () => {
           </Flex>
         </section>
 
-        <section id="swiperight" ref={aboutRef} style={aboutStyle}>
+        <section id="swiperight" style={aboutStyle}>
           <Flex direction="row" align="center">
             <Box flex="1">
               <Image
@@ -207,7 +207,7 @@ const Home = () => {
           </Flex>
         </section>
 
-        <section id="engineer" ref={aboutRef} style={aboutStyle}>
+        <section id="engineer" style={aboutStyle}>
           <Flex direction="row" align="center">
             <Box flex="3" padding>
               <Heading
@@ -262,7 +262,7 @@ const Home = () => {
           </Flex>
         </section>
 
-        <section id="bottomRow" ref={aboutRef} style={engineerStyle}>
+        <section id="bottomRow"style={engineerStyle}>
           <Flex direction="row" align="center">
             <Box flex="3" padding>
               <Heading
