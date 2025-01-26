@@ -63,7 +63,7 @@ const Header = () => {
         const response = await axios.get('http://localhost:8000/history/');
         // Access the history array from the response data
         setHistory(response.data.history || []);
-        console.log('History data:', response.data.history);
+        // console.log('History data:', response.data.history);
       } catch (error) {
         console.error('Error fetching history:', error);
         setHistory([]); // Set empty array on error
@@ -76,7 +76,7 @@ const Header = () => {
   return (
     <Box display="flex" justifyContent={"space-between"}>
       {/* Wrap the heading inside Link */}
-      <Link to="/home">
+      <Link to="/">
         <Heading
           top="0"
           left="0"
@@ -91,9 +91,9 @@ const Header = () => {
       </Link>
 
       <Box>
-        <IconButton backgroundColor="white">
+        {/* <IconButton backgroundColor="white">
           <IoPersonSharp color="black" />
-        </IconButton>
+        </IconButton> */}
 
         <DrawerRoot open={open} onOpenChange={(e) => setOpen(e.open)}>
           <DrawerBackdrop />

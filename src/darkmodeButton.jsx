@@ -6,4 +6,4 @@ function DarkModeButton() {
   )
 }
 
-export default DarkModeButton;
+export { DarkModeButton };

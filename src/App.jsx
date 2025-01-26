@@ -4,13 +4,15 @@ import { Survey } from "./survey";
 import { Home } from "./home";
 import { SavedPage } from './SavedPage';
 // import { LoginPage } from './LoginPage';
+import { DarkModeButton } from './darkmodeButton';
 
 function App() {
   return (
     <Router>
         <Routes>
-          <Route path="/" element={<MainPage />} />
+          <Route path="/main" element={<MainPage />} />
           <Route path="/survey" element={<Survey />} />
+          <Route path="/darkModeSwitch" element={<DarkModeButton />} />
           {/* <Route path="/saved" element={<SavedPage />} /> */}
           {/* <Route path="/login" element={<LoginPage />} /> */}
           <Route path="/home" element={<Home />} />

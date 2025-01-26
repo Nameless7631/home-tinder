@@ -14,18 +14,39 @@ const Description = ({ address, bed, bath, sqft, text }) => {
 
   return (
     <Box>
-      <Box onClick={handleToggle} style={{ cursor: "pointer", display: "inline" }}>
-        {address && (
-          <>
-            Address: {address}
-            <br />
-          </>
-        )}
-        {bed > 0 && (
-          <>
-            Bed: {bed}
-            <br />
-          </>
+        <Box onClick={handleToggle} style={{ cursor: "pointer", display: "inline"}}>
+            {(address) ? (
+                <>
+                Address: {address}<br/>
+                </>
+            ) : <></>
+            }
+             {(bed > 0) ? (
+                <>
+                Bed: {bed}<br/>
+                </>
+            ) : <></>}
+             {(bath > 0) ? (
+                <>
+                Bath: {bath}<br/>
+                </>
+            ) : <></>}
+            {(sqft > 0) ? (
+                <>
+                Sqft: {sqft}<br/>
+                </>
+            ) : <></>}
+            <br/>
+            {firstHalf}
+        </Box>
+        {isOpen && (
+            <Box style={{ display: "inline"}}>
+                {secondHalf}
+                <Box style={{ display: "inline", marginLeft: "5px" }}>
+                    text ever since the 1500s, when an unknown printer took a
+                    galley of type and scrambled it to make a type specimen book.
+                </Box>
+            </Box>
         )}
         {bath > 0 && (
           <>
