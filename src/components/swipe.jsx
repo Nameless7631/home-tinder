@@ -78,8 +78,51 @@ const Swipe = () => {
   //   }
   // }, [randomIdx, houses]);
 
+  const checkImageExists = async (url) => {
+    try {
+      const response = await axios.head(url);
+      return response.status === 200;
+    } catch (error) {
+      return false;
+    }
+  }
+
+  const getImage = async (address) => {
+    const imageType = ["jpg", "webp"];
+    for (let type of imageType){
+      const imagePath = `houses/${address}.${type}`;
+      const exists = await checkImageExists(imagePath);
+      if(exists){
+        return imagePath;
+      }
+    }
+    return "houses/matcha.jpg"
+  }
+
+  const MyComponent = ({ address }) => {
+    const [imageSrc, setImageSrc] = useState(
+      "houses/matcha.jpg"
+    );
+  
+    useEffect(() => {
+      const fetchImage = async () => {
+        const img = await getImage(address);
+        setImageSrc(img);
+      };
+  
+      fetchImage();
+    }, [address]); // Runs every time the address prop changes
+    console.log("Checking path:", imageSrc);
+    return (
+      <Image
+        src={imageSrc}
+        alt="Dynamic image loaded based on existence"
+      />
+    );
+  };
 
   const handleDragEnd = async (_, info) => {
+    const currentHouse = houses[randomIdx];
     if (info.offset.x > 100) {
       setSwiped("right");
       console.log("Swiped Right");
@@ -91,8 +134,8 @@ const Swipe = () => {
       setHistory((prevHistory) => [...prevHistory, randomIdx]);
 
       setRandomIdx(Math.floor(Math.random() * houses.length));
-      if (houses[randomIdx].taxAssessments) {
-        setMostRecentYear(Math.max(...Object.keys(houses[randomIdx].taxAssessments).map(Number)));
+      if (currentHouse.taxAssessments) {
+        setMostRecentYear(Math.max(...Object.keys(currentHouse.taxAssessments).map(Number)));
         setFormData({
           address: houses[randomIdx].formattedAddress,
           bedrooms: houses[randomIdx].bedrooms  ? houses[randomIdx].bedrooms : 0,
@@ -110,12 +153,12 @@ const Swipe = () => {
       }
       // Prepare history data from current house
       const historyData = {
-        address: currentHouse.formattedAddress,
+        address: houses[randomIdx].formattedAddress,
         property_type: currentHouse.propertyType,
         bedrooms: Number(currentHouse.bedrooms || 0),
         bathrooms: Number(currentHouse.bathrooms || 0),
-        price: currentHouse.taxAssessments?.[currentYear]?.value 
-          ? Number(currentHouse.taxAssessments[currentYear].value) 
+        price: currentHouse.taxAssessments?.[mostRecentYear]?.value 
+          ? Number(currentHouse.taxAssessments[mostRecentYear].value) 
           : "",
           like: true
       };
@@ -157,8 +200,8 @@ const Swipe = () => {
         property_type: currentHouse.propertyType,
         bedrooms: Number(currentHouse.bedrooms || 0),
         bathrooms: Number(currentHouse.bathrooms || 0),
-        price: currentHouse.taxAssessments?.[currentYear]?.value 
-          ? Number(currentHouse.taxAssessments[currentYear].value) 
+        price: currentHouse.taxAssessments?.[mostRecentYear]?.value 
+          ? Number(currentHouse.taxAssessments[mostRecentYear].value) 
           : "",
           like: false
       };
@@ -169,7 +212,6 @@ const Swipe = () => {
     setSwiped(null);
     controls.start({ x: 0, opacity: 1 });
   };
-
 
   return (
     <div
@@ -298,10 +340,11 @@ const Swipe = () => {
         }
       }}
       >
-      <Image
-        src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+    {/* <Image
+        src={getImage(houses[randomIdx]?.formattedAddress)}
         alt="Green double couch with wooden legs"
-      />
+      />       */}
+        <MyComponent address={houses[randomIdx]?.formattedAddress || ""} />
       <Card.Body gap="2">
         {/* <Card.Title>Location- City/State and Price</Card.Title> */}
         <HStack>

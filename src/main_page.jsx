@@ -1,5 +1,6 @@
 import { Flex} from "@chakra-ui/react"
 import { Swipe } from './components/swipe';
+// import Swipe from './components/swipe';
 import { Header } from "./components/ui/header.jsx"
 ;
 
