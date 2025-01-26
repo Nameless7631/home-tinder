@@ -11,8 +11,11 @@ import singleFamily from "./images/phil-hearing-IYfp2Ixe9nM-unsplash.jpg"
 import condo from "./images/naasu-asakura-6n0jjVPxUgY-unsplash.jpg"
 import multiFamily from "./images/marcus-lenk-wKO0rx50VWo-unsplash.jpg"
 import axios from 'axios';  // Add this import at the top
+import { useNavigate } from 'react-router-dom';
 
 const Survey = () => {
+
+  const navigate = useNavigate();
 
   // Move these functions before any state declarations
   const transformToPrice = (value) => {
@@ -33,16 +36,16 @@ const Survey = () => {
 
   // State declarations follow
   const [leftValue, setLeftValue] = useState(0);
-  const [rightValue, setRightValue] = useState(20);
+  const [rightValue, setRightValue] = useState(5);
   const [left2, setLeft2] = useState(0);
-  const [right2, setRight2] = useState(20);
+  const [right2, setRight2] = useState(5);
   const [priceLeft, setPriceLeft] = useState(0);
   const [priceRight, setPriceRight] = useState(100);
 
   const [formData, setFormData] = useState({
     houseType: [],
-    numberOfBeds: [0, 20],
-    numberOfBathrooms: [0, 20],
+    numberOfBeds: [0, 5],
+    numberOfBathrooms: [0, 5],
     priceRange: [transformToPrice(0), transformToPrice(100)],
     city: []
   });
@@ -75,13 +78,13 @@ const Survey = () => {
     defaultValue: [leftValue, rightValue], // Set default values for the range slider
     thumbAlignment: "center",
     min: 0, // Set minimum value for the slider
-    max: 20, // Set maximum value for the slider
+    max: 5, // Set maximum value for the slider
   });
   const slider2 = useSlider({
     defaultValue: [left2, right2], // Set default values for the range slider
     thumbAlignment: "center",
     min: 0, // Set minimum value for the slider
-    max: 20, // Set maximum value for the slider
+    max: 5, // Set maximum value for the slider
   });
 
   const priceSlider = useSlider({
@@ -180,9 +183,8 @@ const Survey = () => {
         <Flex justify="center" align="center" mt="30px" gap="24">
           {/* Number of Beds Slider */}
           <Stack align="center" spacing={2}>
-            <Heading size="sm">Current: [{slider.value.join(", ")}]</Heading>
             <Slider.RootProvider value={slider} width="200px">
-              <Slider.Label>Number of Beds</Slider.Label>
+              <Slider.Label>Number of Beds: [{slider.value.join(" - ")}]</Slider.Label>
               <Slider.Control>
                 <Slider.Track bg="#d0d2cd">
                   <Slider.Range bg="#99c280" /> 
@@ -199,9 +201,8 @@ const Survey = () => {
 
           {/* Number of Bathrooms Slider */}
           <Stack align="center" spacing={2} ml="170px">
-            <Heading size="sm">Current: [{slider2.value.join(", ")}]</Heading>
-            <Slider.RootProvider value={slider2} width="200px">
-              <Slider.Label>Number of Bathrooms</Slider.Label>
+            <Slider.RootProvider value={slider2} width="210px">
+              <Slider.Label>Number of Bathrooms: [{slider2.value.join(" - ")}]</Slider.Label>
               <Slider.Control>
                 <Slider.Track bg="#d0d2cd">
                   <Slider.Range bg="#99c280" />
@@ -272,7 +273,10 @@ const Survey = () => {
           color="white" 
           borderRadius="md" 
           _hover={{ bg: "#74995d" }}
-          onClick={handleSubmit}
+          onClick={() => {
+            handleSubmit();
+            navigate("/main");
+          }}
           >Submit</Button>
       </Stack>
     </Flex>
@@ -282,8 +286,8 @@ const Survey = () => {
 const items = [
   { value: "Apartment", title: "Apartment", description: "" },
   { value: "Condo", title: "Condo", description: "" },
-  { value: "House", title: "Single-Family", description: "" },
-  { value: "Town House", title: "Multi-Family", description: "" },
+  { value: "House", title: "Single Family", description: "" },
+  { value: "Town House", title: "Multi Family", description: "" },
 ];
 
 export { Survey };

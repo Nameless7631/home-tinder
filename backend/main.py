@@ -6,6 +6,9 @@ from openai import OpenAI
 from dotenv import load_dotenv, find_dotenv
 import json
 from pydantic import BaseModel
+import random
+
+
 
 _ = load_dotenv(find_dotenv())
 client = OpenAI(
@@ -14,6 +17,18 @@ client = OpenAI(
 )
 
 houses = []
+
+preferences = []
+algo = {
+    "Apartment": 0,
+    "Condo": 0,
+    "Single Family": 0,
+    "Multi-Family": 0,
+    "moreThan3Beds": 0,
+    "threeOrLessBeds": 0,
+    "moreThan2Baths": 0,
+    "lessThan2Baths": 0
+}
 
 def generate_desc(house: dict):
     features = house.get('features', {})
@@ -106,7 +121,50 @@ app.add_middleware(
 
 @app.get("/")
 def read_root():
-    return {"house_ids": houses}
+    num = random.randint(0, len(houses)-1)
+    
+    # Keep generating new numbers until we find a house that matches our criteria
+    while True:
+        house = houses[num]
+        property_type = house['propertyType']
+        
+        # Check if all property types are negative
+        if (algo['Apartment'] < 0 and
+            algo['Condo'] < 0 and
+            algo['Single Family'] < 0 and
+            algo['Multi-Family'] < 0):
+            # Reset all property type values to 0
+            algo['Multi-Family'] = 0
+            algo['Apartment'] = 0
+            algo['Condo'] = 0
+            algo['Single Family'] = 0
+            reset_algo = {
+                'Multi-Family': 0,
+                'Apartment': 0,
+                'Condo': 0,
+                'Single Family': 0,
+                'moreThan3Beds': algo['moreThan3Beds'],
+                'threeOrLessBeds': algo['threeOrLessBeds'],
+                'moreThan2Baths': algo['moreThan2Baths'],
+                'lessThan2Baths': algo['lessThan2Baths']
+            }
+            algo.update(reset_algo)
+            print(reset_algo)
+            break
+        
+        # Check if this property type should be skipped (algo value < 0)
+        if (property_type == 'Apartment' and algo['Apartment'] < 0 or
+            property_type == 'Condo' and algo['Condo'] < 0 or
+            property_type == 'Single Family' and algo['Single Family'] < 0 or
+            property_type == 'Multi-Family' and algo['Multi-Family'] < 0):
+            num = random.randint(0, len(houses)-1)
+            continue
+            
+        # If we reach here, the house is acceptable
+        break
+    
+    return houses[num]
+
 
 @app.post("/saved/{house_id}")
 def save_post(house_id : int):
@@ -124,10 +182,21 @@ def save_history(house_data: HouseHistory):
 
 @app.post("/preferences")
 def save_preferences(prefs: Preferences):
-    preferences.append(prefs.dict())
+    preferences.append(prefs.dict()) 
     return {"result": "success", "preferences": prefs}
 
 @app.get("/preferences")
 def get_preferences():
     return {"preferences": preferences}
 
+@app.get("/algo")
+def algo_get():
+    return {"result": algo}
+
+
+@app.post("/algo")
+def algo_post(algo_front: dict):
+    global algo
+    algo.update(algo_front)
+    # print(algo)
+    return {"result": algo}

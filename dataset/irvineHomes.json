@@ -1179,6 +1179,7 @@
         "county": "Orange County",
         "latitude": 33.692907,
         "longitude": -117.714691,
+        "propertyType": "Single Family",
         "bedrooms": 3,
         "bathrooms": 3
       },
