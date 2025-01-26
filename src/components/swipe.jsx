@@ -13,8 +13,16 @@ const Swipe = () => {
   const [history, setHistory] = useState([]);
   const [houses, setHouses] = useState([]);
   const [randomIdx, setRandomIdx] = useState(null);
-  const [reloadDescription, setReloadDescription] = useState(false); // New state to trigger reload
   const cardRef = useRef(null);
+
+  const [formData, setFormData] = useState({
+    address: "",
+    bedrooms: "",
+    bathrooms: "",
+    price: "",
+  });
+
+
 
   useEffect(() => {
     console.log("Updated history:", history);
@@ -62,11 +70,17 @@ const Swipe = () => {
         opacity: 0,
         transition: { duration: 0.5 },
       });
-      setHistory((prevHistory) => [...prevHistory, "Right"]);
+      setHistory((prevHistory) => [...prevHistory, randomIdx]);
 
+
+
+      // console.log({idx: randomIdx, like : false})
+      // await axios.post('http://localhost:8000/history', {idx: randomIdx, like : true});
       //update the text
       setRandomIdx(Math.floor(Math.random() * houses.length));
+      
 
+      
     } else if (info.offset.x < -100) {
       setSwiped("left");
       console.log("Swiped Left");
@@ -76,7 +90,9 @@ const Swipe = () => {
         opacity: 0,
         transition: { duration: 0.5 },
       });
-      setHistory((prevHistory) => [...prevHistory, "Left"]);
+      setHistory((prevHistory) => [...prevHistory, randomIdx]);
+      console.log({idx: randomIdx, like : false})
+      // await axios.post('http://localhost:8000/history', {idx: randomIdx, like : false});
       //update the text
       setRandomIdx(Math.floor(Math.random() * houses.length))
     } else {
@@ -111,7 +127,7 @@ const Swipe = () => {
       ref={cardRef}
       maxW="xl" 
       overflow="hidden" 
-      h="900px"
+      h="800px"
       tabIndex={0} // Makes the card focusable to capture key events
       onKeyDown={async (event) => {
         if (event.key === "ArrowLeft") {
@@ -123,7 +139,8 @@ const Swipe = () => {
             opacity: 0,
             transition: { duration: 0.5 },
           });
-          setHistory((prevHistory) => [...prevHistory, "Left"]);
+          setHistory((prevHistory) => [...prevHistory, randomIdx]);
+          // await axios.post('http://localhost:8000/history', {idx: randomIdx, like : false});
           setSwiped(null);
           setRandomIdx(Math.floor(Math.random() * houses.length))
           controls.start({ x: 0, opacity: 1 });
@@ -136,7 +153,8 @@ const Swipe = () => {
             opacity: 0,
             transition: { duration: 0.5 },
           });
-          setHistory((prevHistory) => [...prevHistory, "Right"]);
+          setHistory((prevHistory) => [...prevHistory, randomIdx]);
+          const response = await axios.post(`http://127.0.0.1:8000/history/${randomIdx}`);
           setSwiped(null);
           setRandomIdx(Math.floor(Math.random() * houses.length))
           controls.start({ x: 0, opacity: 1 });

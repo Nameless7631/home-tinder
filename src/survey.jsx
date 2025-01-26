@@ -1,11 +1,16 @@
 "use client";
 
-import { Code, Slider, Stack, Text, Flex, CheckboxGroup, Box, Heading, VStack } from "@chakra-ui/react";
+import { Code, Slider, Stack, Text, Flex, CheckboxGroup, Box, Heading, VStack, Image, Button} from "@chakra-ui/react";
 import { useSlider } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { CheckboxCard } from "./components/ui/checkbox-card";
 import { CUIAutoComplete } from 'chakra-ui-autocomplete';
 import { Link } from 'react-router-dom'; // Import Link from next/link
+import apartment from "./images/luke-van-zyl-koH7IVuwRLw-unsplash.jpg"
+import singleFamily from "./images/phil-hearing-IYfp2Ixe9nM-unsplash.jpg"
+import condo from "./images/naasu-asakura-6n0jjVPxUgY-unsplash.jpg"
+import multiFamily from "./images/marcus-lenk-wKO0rx50VWo-unsplash.jpg"
+import axios from 'axios';  // Add this import at the top
 
 const Survey = () => {
 
@@ -46,6 +51,25 @@ const Survey = () => {
     console.log(formData);
   }, [formData]);
 
+  const handleSubmit = async () => {
+    try {
+      // Ensure all numbers are properly converted from strings
+      const formattedData = {
+        ...formData,
+        numberOfBeds: formData.numberOfBeds.map(Number),
+        numberOfBathrooms: formData.numberOfBathrooms.map(Number),
+        priceRange: formData.priceRange.map(Number)
+      };
+      
+      const response = await axios.post('http://localhost:8000/preferences', formattedData);
+      console.log('Success:', response.data);
+    } catch (error) {
+      console.error('Error submitting preferences:', error);
+      if (error.response) {
+        console.error('Response data:', error.response.data);
+      }
+    }
+  };
 
   const slider = useSlider({
     defaultValue: [leftValue, rightValue], // Set default values for the range slider
@@ -109,7 +133,7 @@ const Survey = () => {
           </Heading>
         </Link>
 
-        <Heading size="2xl" textAlign="center" mt="90px" fontSize="4xl"> Preferences </Heading>
+        <Heading size="2xl" textAlign="center" mt="50px" fontSize="4xl"> Preferences </Heading>
         <Heading textAlign="center" mt="30px">House Type</Heading>
 
         <CheckboxGroup defaultValue={["next"]}>
@@ -117,15 +141,25 @@ const Survey = () => {
             {items.map((item) => (
               <VStack>
                 <Box
-                  w="128px"
-                  h="128px"
+                  w="156px"
+                  h="156px"
                   border="2px"
                   borderColor="black"
                   bg="gray.100"
                   borderRadius="md"
-                  />
+                  overflow="hidden"
+                  >
+                    <Image
+                      src={item.value === "Apartment" ? apartment : 
+                           item.value === "House" ? singleFamily :
+                           item.value === "Condo" ? condo : 
+                           multiFamily} // fallback to apartment for other types
+                      boxSize="100%"
+                      objectFit="cover"
+                    />
+                  </Box>
                 <CheckboxCard
-                  w="128px"
+                  w="156px"
                   label={item.title}
                   description={item.description}
                   key={item.value}
@@ -164,7 +198,7 @@ const Survey = () => {
           </Stack>
 
           {/* Number of Bathrooms Slider */}
-          <Stack align="center" spacing={2} ml="60px">
+          <Stack align="center" spacing={2} ml="170px">
             <Heading size="sm">Current: [{slider2.value.join(", ")}]</Heading>
             <Slider.RootProvider value={slider2} width="200px">
               <Slider.Label>Number of Bathrooms</Slider.Label>
@@ -231,16 +265,25 @@ const Survey = () => {
             }
           />
         </Stack>
+        <Button 
+          mt="20px" 
+          width="100%" 
+          bg="#99c280" 
+          color="white" 
+          borderRadius="md" 
+          _hover={{ bg: "#74995d" }}
+          onClick={handleSubmit}
+          >Submit</Button>
       </Stack>
     </Flex>
   );
 };
 
 const items = [
-  { value: "Apartment", title: "Apartment(s)", description: "" },
-  { value: "House", title: "House", description: "" },
+  { value: "Apartment", title: "Apartment", description: "" },
   { value: "Condo", title: "Condo", description: "" },
-  { value: "Town House", title: "Town House", description: "" },
+  { value: "House", title: "Single-Family", description: "" },
+  { value: "Town House", title: "Multi-Family", description: "" },
 ];
 
 export { Survey };
